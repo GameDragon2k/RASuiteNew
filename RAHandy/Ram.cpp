@@ -54,6 +54,22 @@
 #include "system.h"
 #include "ram.h"
 
+
+#include "../RA_Integration/RA_Interface.h"
+
+UBYTE	Ram[65536];
+
+unsigned char RAMByteReader(unsigned int nOffs)
+{
+
+	return Ram[nOffs];
+}
+
+void RAMByteWriter(unsigned int nOffs, unsigned int nVal)
+{
+	Ram[nOffs] = nVal;
+}
+
 CRam::CRam(UBYTE *filememory,ULONG filesize)
 {
 	HOME_HEADER	header;
@@ -72,12 +88,7 @@ CRam::CRam(UBYTE *filememory,ULONG filesize)
 
 		if(header.magic[0]!='B' || header.magic[1]!='S' || header.magic[2]!='9' || header.magic[3]!='3')
 		{
-			CLynxException lynxerr;
-			lynxerr.Message() << "Handy Error: File format invalid (Magic No)";
-			lynxerr.Description()
-				<< "The image you selected was not a recognised homebrew format." << endl
-				<< "(see the Handy User Guide for more information).";
-			throw(lynxerr);
+
 		}
 	}
 	else
@@ -87,6 +98,10 @@ CRam::CRam(UBYTE *filememory,ULONG filesize)
 	// Reset will cause the loadup
 
 	Reset();
+
+	//RA_ClearMemoryBanks();
+
+	//RA_InstallMemoryBank(0, RAMByteReader, RAMByteWriter, RAM_SIZE);
 }
 
 CRam::~CRam()
@@ -126,6 +141,9 @@ void CRam::Reset(void)
 	} else {
 		memset(mRamData, DEFAULT_RAM_CONTENTS, RAM_SIZE);
 	}
+
+
+
 }
 
 bool CRam::ContextSave(FILE *fp)

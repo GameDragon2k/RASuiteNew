@@ -299,6 +299,7 @@ protected:
 	afx_msg void OnJoystickMenuSelect();
 	afx_msg void OnJoystickMenuUpdate(CCmdUI *pCmdUI);
 	afx_msg void OnDefineKeysSelect();
+	afx_msg void OnInvokeDialog(UINT nID);
 	afx_msg void OnSoundMenuSelect();
 	afx_msg void OnSoundMenuUpdate(CCmdUI *pCmdUI);
 	afx_msg void OnBkgndMenuSelect();
@@ -370,7 +371,7 @@ private:
 	int			mDisplayOffsetY;
 	ULONG		mDisplayMode;
 	BOOL		mDisplayNoPainting;
-
+	BOOL		mHardcoreActive;
 	BOOL		mCommandLineMode;
 
 	ULONG		mTimerID;

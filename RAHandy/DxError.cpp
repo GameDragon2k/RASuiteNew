@@ -210,58 +210,6 @@ char* DXAppErrorToString(HRESULT error)
             return "This surface can not be restored because it was created in a different mode.\0";
         case DDERR_XALIGN:
             return "Rectangle provided was not horizontally aligned on required boundary.\0";
-        case D3DERR_BADMAJORVERSION:
-            return "D3DERR_BADMAJORVERSION\0";
-        case D3DERR_BADMINORVERSION:
-            return "D3DERR_BADMINORVERSION\0";
-        case D3DERR_EXECUTE_LOCKED:
-            return "D3DERR_EXECUTE_LOCKED\0";
-        case D3DERR_EXECUTE_NOT_LOCKED:
-            return "D3DERR_EXECUTE_NOT_LOCKED\0";
-        case D3DERR_EXECUTE_CREATE_FAILED:
-            return "D3DERR_EXECUTE_CREATE_FAILED\0";
-        case D3DERR_EXECUTE_DESTROY_FAILED:
-            return "D3DERR_EXECUTE_DESTROY_FAILED\0";
-        case D3DERR_EXECUTE_LOCK_FAILED:
-            return "D3DERR_EXECUTE_LOCK_FAILED\0";
-        case D3DERR_EXECUTE_UNLOCK_FAILED:
-            return "D3DERR_EXECUTE_UNLOCK_FAILED\0";
-        case D3DERR_EXECUTE_FAILED:
-            return "D3DERR_EXECUTE_FAILED\0";
-        case D3DERR_EXECUTE_CLIPPED_FAILED:
-            return "D3DERR_EXECUTE_CLIPPED_FAILED\0";
-        case D3DERR_TEXTURE_NO_SUPPORT:
-            return "D3DERR_TEXTURE_NO_SUPPORT\0";
-        case D3DERR_TEXTURE_NOT_LOCKED:
-            return "D3DERR_TEXTURE_NOT_LOCKED\0";
-        case D3DERR_TEXTURE_LOCKED:
-            return "D3DERR_TEXTURELOCKED\0";
-        case D3DERR_TEXTURE_CREATE_FAILED:
-            return "D3DERR_TEXTURE_CREATE_FAILED\0";
-        case D3DERR_TEXTURE_DESTROY_FAILED:
-            return "D3DERR_TEXTURE_DESTROY_FAILED\0";
-        case D3DERR_TEXTURE_LOCK_FAILED:
-            return "D3DERR_TEXTURE_LOCK_FAILED\0";
-        case D3DERR_TEXTURE_UNLOCK_FAILED:
-            return "D3DERR_TEXTURE_UNLOCK_FAILED\0";
-        case D3DERR_TEXTURE_LOAD_FAILED:
-            return "D3DERR_TEXTURE_LOAD_FAILED\0";
-        case D3DERR_MATRIX_CREATE_FAILED:
-            return "D3DERR_MATRIX_CREATE_FAILED\0";
-        case D3DERR_MATRIX_DESTROY_FAILED:
-            return "D3DERR_MATRIX_DESTROY_FAILED\0";
-        case D3DERR_MATRIX_SETDATA_FAILED:
-            return "D3DERR_MATRIX_SETDATA_FAILED\0";
-        case D3DERR_SETVIEWPORTDATA_FAILED:
-            return "D3DERR_SETVIEWPORTDATA_FAILED\0";
-        case D3DERR_MATERIAL_CREATE_FAILED:
-            return "D3DERR_MATERIAL_CREATE_FAILED\0";
-        case D3DERR_MATERIAL_DESTROY_FAILED:
-            return "D3DERR_MATERIAL_DESTROY_FAILED\0";
-        case D3DERR_MATERIAL_SETDATA_FAILED:
-            return "D3DERR_MATERIAL_SETDATA_FAILED\0";
-        case D3DERR_LIGHT_SET_FAILED:
-            return "D3DERR_LIGHT_SET_FAILED\0";
 		case DSERR_ALLOCATED:
 			return "The request failed because resources, such as a priority level, were already in use by another caller.\0";
 		case DSERR_ALREADYINITIALIZED:

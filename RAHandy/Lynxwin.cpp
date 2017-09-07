@@ -49,6 +49,11 @@
 #include "lynxdef.h"
 #include "ErrorHandler.h"
 #include "debugger.h"
+#include "Overlay.h"
+
+#include "../RA_Integration/RA_Interface.h"
+#include "../RA_Integration/RA_Resource.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -88,19 +93,19 @@ CLynxWindow::CLynxWindow(CString gamefile)
 	mFramesPerSecond=0;
 	mFrameCount=0;
 	mFrameSkip=0;
-
+	mHardcoreActive=FALSE;
 	// Init display stuff so it will create correctly
 
 	mDisplayRender=NULL;
 	mDisplayNoPainting=TRUE;
-	mDisplayMode=DISPLAY_WINDOWED|DISPLAY_X1|DISPLAY_NO_ROTATE;
+	mDisplayMode=DISPLAY_WINDOWED| DISPLAY_X1 |DISPLAY_NO_ROTATE;
 	mDisplayOffsetX=0;
 	mDisplayOffsetY=0;
-
+	
 	// Load up the default background bitmap
-	mDisplayBackgroundType=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayBackgroundType", IDB_BITMAP_BACKGROUND3);
-	if(mDisplayBackgroundType!=IDB_BITMAP_BACKGROUND1 && mDisplayBackgroundType!=IDB_BITMAP_BACKGROUND2 && mDisplayBackgroundType!=IDB_BITMAP_BACKGROUND3) mDisplayBackgroundType=IDB_BITMAP_BACKGROUND1;
-	if(!mDisplayBackground.LoadBitmap(mDisplayBackgroundType)) return;
+	//mDisplayBackgroundType=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayBackgroundType", IDB_BITMAP_BACKGROUND3);
+	//if(mDisplayBackgroundType!=IDB_BITMAP_BACKGROUND1 && mDisplayBackgroundType!=IDB_BITMAP_BACKGROUND2 && mDisplayBackgroundType!=IDB_BITMAP_BACKGROUND3) mDisplayBackgroundType=IDB_BITMAP_BACKGROUND1;
+	//if(!mDisplayBackground.LoadBitmap(mDisplayBackgroundType)) return;
 
 	// Setup default networker state
 	mpNetLynx=NULL;
@@ -141,8 +146,39 @@ CLynxWindow::CLynxWindow(CString gamefile)
 	gSingleStepModeSprites=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DebugSpriteStep",FALSE);
 #else
 	GetMenu()->RemoveMenu(2,MF_BYPOSITION);
+
+	HMENU hRA = CreatePopupMenu();
+
+	AppendMenu(hRA, MF_STRING, IDM_RA_FILES_LOGOUT, TEXT("Log&out"));
+	AppendMenu(hRA, MF_SEPARATOR, NULL, NULL);
+	AppendMenu(hRA, MF_STRING, IDM_RA_OPENUSERPAGE, TEXT("Open my &User Page"));
+
+	UINT nGameFlags = MF_STRING;
+	//if( g_pActiveAchievements->GameID() == 0 )	//	Disabled til I can get this right: Snes9x doesn't call this?
+	//	nGameFlags |= (MF_GRAYED|MF_DISABLED);
+
+	AppendMenu(hRA, nGameFlags, IDM_RA_OPENGAMEPAGE, TEXT("Open this &Game's Page"));
+	AppendMenu(hRA, MF_SEPARATOR, NULL, NULL);
+	AppendMenu(hRA, mHardcoreActive ? MF_CHECKED: MF_UNCHECKED, IDM_RA_HARDCORE_MODE, TEXT("&Hardcore Mode"));
+	AppendMenu(hRA, MF_SEPARATOR, NULL, NULL);
+	AppendMenu(hRA, MF_STRING, IDM_RA_FILES_ACHIEVEMENTS, TEXT("Achievement &Sets"));
+	AppendMenu(hRA, MF_STRING, IDM_RA_FILES_ACHIEVEMENTEDITOR, TEXT("Achievement &Editor"));
+	AppendMenu(hRA, MF_STRING, IDM_RA_FILES_MEMORYFINDER, TEXT("&Memory Inspector"));
+	AppendMenu(hRA, MF_STRING, IDM_RA_PARSERICHPRESENCE, TEXT("&Parse Rich Presence script"));
+	AppendMenu(hRA, MF_SEPARATOR, NULL, NULL);
+	AppendMenu(hRA, MF_STRING, IDM_RA_REPORTBROKENACHIEVEMENTS, TEXT("&Report Broken Achievements"));
+	AppendMenu(hRA, MF_STRING, IDM_RA_GETROMCHECKSUM, TEXT("Get ROM &Checksum"));
+	AppendMenu(hRA, MF_STRING, IDM_RA_SCANFORGAMES, TEXT("&Scan for games"));
+	//	##RA embed RA
+	AppendMenu(GetMenu()->m_hMenu, MF_POPUP | MF_STRING, (UINT_PTR)hRA, TEXT("&RetroAchievements"));
+
+
+
+	//AppendMenu(GetMenu()->m_hMenu, MF_POPUP | MF_STRING, (UINT_PTR)RA_CreatePopupMenu(), TEXT("&RetroAchievements"));
 	DrawMenuBar();
 #endif
+
+	
 
 	// Load our icon
 
@@ -174,12 +210,13 @@ CLynxWindow::CLynxWindow(CString gamefile)
 // Set the video mode, create device contexts
 //
 	ULONG render=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeRender",DISPLAY_WINDOWED)&DISPLAY_RENDER_MASK;
-	ULONG magnify=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeMagnification",DISPLAY_X1)&DISPLAY_X_MASK;
+	ULONG magnify=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeMagnification",DISPLAY_X4)&DISPLAY_X_MASK;
 	ULONG rotate=DISPLAY_NO_ROTATE;
-	ULONG bkgnd=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeBackground",DISPLAY_BKGND);
-	if(mpLynx->CartGetRotate()==CART_ROTATE_LEFT) rotate=DISPLAY_ROTATE_LEFT;
-	if(mpLynx->CartGetRotate()==CART_ROTATE_RIGHT) rotate=DISPLAY_ROTATE_RIGHT;
-// Allow boot into fullscreen -	if(render==DISPLAY_FULLSCREEN || render==DISPLAY_EAGLE_FULLSCREEN || render==DISPLAY_LYNXLCD_FULLSCREEN) render=DISPLAY_WINDOWED;
+	ULONG bkgnd=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeBackground",DISPLAY_NO_BKGND);
+	//if(mpLynx->CartGetRotate()==CART_ROTATE_LEFT) rotate=DISPLAY_ROTATE_LEFT;
+	//if(mpLynx->CartGetRotate()==CART_ROTATE_RIGHT) rotate=DISPLAY_ROTATE_RIGHT;
+// Allow boot into fullscreen -	
+	if(render==DISPLAY_FULLSCREEN || render==DISPLAY_EAGLE_FULLSCREEN || render==DISPLAY_LYNXLCD_FULLSCREEN) render=DISPLAY_WINDOWED;
 	mDisplayMode=DisplayModeSet(render,bkgnd,magnify,rotate);
 
 //
@@ -270,6 +307,9 @@ BOOL CLynxWindow::DestroyWindow()
 		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"InfoWindowY1", rect.top);
 	}
 
+
+	EndOverlay();
+
 	// Destroy the previous renderer
 	if(mDisplayRender!=NULL)
 	{
@@ -278,6 +318,7 @@ BOOL CLynxWindow::DestroyWindow()
 		mDisplayRender=NULL;
 	}
 
+	
 	// Destroy any dump or code windows that are open
 
 #ifdef _LYNXDBG
@@ -414,12 +455,14 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 
 		// Save the rom image path to the registry
 		mpLynxApp->WriteProfileString(REGISTRY_VERSION,"BootImageFilename",romfile);
+
+
 	}
 	else
 	{
 		file.Close();
 	}
-
+	
 	// Loop around the file open menu until we have cart or the user
 	// has cancelled the operation
 	do
@@ -428,6 +471,13 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 		{
 			if(!fileprovided)
 			{
+
+				// Create the system object
+				
+				
+
+				if (newsystem == NULL)
+				{
 				CString filter="Handy Filetypes (*.zip;*.lnx;*.com;*.o)|*.zip;*.lnx;*.com;*.o|Lynx Images (*.zip;*.lnx)|*.zip;*.lnx|Homebrew Images (*.zip;*.com;*.o)|*.zip;*.com;*.o|ZIP Files (*.zip)|*.zip|All Files (*.*)|*.*||";
 				gamefile=mpLynxApp->GetProfileString(REGISTRY_VERSION,"DefaultGameFile","");
 				// Check if gamefile exists if so then load, else dialog
@@ -436,17 +486,25 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 				if(dlg.DoModal()==IDCANCEL)
 				{
 					gamefile="";
+					dlg.CloseWindow();
+					newsystem = new CSystem((char*)LPCTSTR("BIOS.lnx"), (char*)LPCTSTR(romfile));
 				}
 				else
 				{
 					gamefile=dlg.GetPathName();
 					mpLynxApp->WriteProfileString(REGISTRY_VERSION,"DefaultGameFile",gamefile);
+
+
+					// Create the system object
+					newsystem = new CSystem((char*)LPCTSTR(gamefile), (char*)LPCTSTR(romfile));
+
 				}
+
+				}
+
 			}
 
-			// Create the system object
-			newsystem = new CSystem((char*)LPCTSTR(gamefile),(char*)LPCTSTR(romfile));
-
+			
 #ifdef _LYNXDBG
 			if(mpDebugger)
 			{
@@ -456,19 +514,15 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 			mpDebugger = new CDebugger(*newsystem);
 			newsystem->DebugSetCallback(mpDebugger->DebuggerMessage,(ULONG)mpDebugger);
 #endif
+
 		}
-		catch(CLynxException &err)
+		catch (const char &e)
 		{
-			MessageBox(err.mDesc, err.mMsg, MB_OK | MB_ICONERROR);
-			if(newsystem!=NULL)
-			{
-				delete newsystem;
-				newsystem=NULL;
-			}
-			gamefile="";
+
+			gamefile = "";
 		}
-	}
-	while(newsystem==NULL);
+	} while (newsystem == NULL);
+	
 
 	return newsystem;
 }
@@ -488,7 +542,7 @@ void CLynxWindow::CalcWindowSize(CRect *rect)
 	//
 	// Derive the basic window dimensions
 	//
-	if(DisplayModeWindowed() && DisplayModeBkgnd()==DISPLAY_BKGND && DisplayModeRotate()==DISPLAY_NO_ROTATE)
+	if(DisplayModeWindowed() && DisplayModeBkgnd()==DISPLAY_BKGND)
 	{
 		BITMAP bkgnd;
 		mDisplayBackground.GetBitmap(&bkgnd);
@@ -515,6 +569,8 @@ void CLynxWindow::CalcWindowSize(CRect *rect)
 	rect->bottom=rect->top+win_height+GetSystemMetrics(SM_CYMENU)+GetSystemMetrics(SM_CYFRAME);
 	CalcWindowRect(rect,0);
 }
+
+
 
 
 ULONG CLynxWindow::DisplayModeSet(ULONG mode)
@@ -690,6 +746,8 @@ ULONG CLynxWindow::DisplayModeSet(ULONG mode)
 
 	Invalidate(TRUE);
 
+	
+
 	return mDisplayMode;
 }
 
@@ -818,6 +876,7 @@ UBYTE* CLynxWindow::DisplayCallback(ULONG objref)
 		// Reset the frameskip counter
 		frameskipcount=lwin->mFrameSkip;
 
+
 		// A screen update is required so lets get on with it
 		lwin->mFrameCount++;
 		lwin->OnPaint();
@@ -839,18 +898,18 @@ UBYTE* CLynxWindow::DisplayCallback(ULONG objref)
 	}
 }
 
-BEGIN_MESSAGE_MAP(CLynxWindow,CFrameWnd)
+BEGIN_MESSAGE_MAP(CLynxWindow, CFrameWnd)
 	//{{AFX_MSG_MAP(CLynxWindow)
 #ifdef _LYNXDBG
-	ON_COMMAND(IDM_DEBUG_DUMP,OnDumpMenuSelect)
-	ON_COMMAND(IDM_DEBUG_CODE,OnCodeMenuSelect)
-	ON_COMMAND(IDM_DEBUG_TRACE,OnTraceMenuSelect)
-	ON_COMMAND(IDM_DEBUG_GRAPHICS,OnGraphicsMenuSelect)
-	ON_COMMAND(IDM_DEBUG_RAMDUMP,OnRAMDumpMenuSelect)
+	ON_COMMAND(IDM_DEBUG_DUMP, OnDumpMenuSelect)
+	ON_COMMAND(IDM_DEBUG_CODE, OnCodeMenuSelect)
+	ON_COMMAND(IDM_DEBUG_TRACE, OnTraceMenuSelect)
+	ON_COMMAND(IDM_DEBUG_GRAPHICS, OnGraphicsMenuSelect)
+	ON_COMMAND(IDM_DEBUG_RAMDUMP, OnRAMDumpMenuSelect)
 	ON_COMMAND(IDM_DEBUG_STEP, OnStepMenuSelect)
 	ON_COMMAND(IDM_DEBUG_DEBUGGER, OnDebuggerMenuSelect)
 	// Dont delete me some of the debug windows send me messages
-	ON_COMMAND(IDM_DRAW_DEBUG_WINDOWS,OnDebuggerUpdate)
+	ON_COMMAND(IDM_DRAW_DEBUG_WINDOWS, OnDebuggerUpdate)
 #endif
 	ON_COMMAND(IDM_OPTIONS_PAUSE, OnPauseMenuSelect)
 	ON_UPDATE_COMMAND_UI(IDM_OPTIONS_PAUSE, OnPauseMenuUpdate)
@@ -859,14 +918,12 @@ BEGIN_MESSAGE_MAP(CLynxWindow,CFrameWnd)
 	ON_COMMAND(IDM_OPTIONS_SOUND, OnSoundMenuSelect)
 	ON_UPDATE_COMMAND_UI(IDM_OPTIONS_SOUND, OnSoundMenuUpdate)
 	ON_COMMAND(IDM_HELP_INFO, OnInfoSelect)
-	ON_UPDATE_COMMAND_UI(IDM_HELP_INFO,OnInfoMenuUpdate)
+	ON_UPDATE_COMMAND_UI(IDM_HELP_INFO, OnInfoMenuUpdate)
 	ON_COMMAND(IDM_HELP_ABOUT, OnAboutBoxSelect)
 	ON_COMMAND(IDM_OPTIONS_RESET, OnResetMenuSelect)
 	ON_COMMAND(IDM_OPTIONS_BACKGROUND, OnBkgndMenuSelect)
 	ON_UPDATE_COMMAND_UI(IDM_OPTIONS_BACKGROUND, OnBkgndMenuUpdate)
-	ON_COMMAND(IDM_OPTIONS_KEYDEFS,OnDefineKeysSelect)
-	ON_MESSAGE(WM_NETOBJ_SELECT, OnNetworkDataWaiting)
-	ON_MESSAGE(WM_NETOBJ_UPDATE, OnNetworkUpdate)
+	ON_COMMAND(IDM_OPTIONS_KEYDEFS, OnDefineKeysSelect)
 	ON_COMMAND(IDM_OPTIONS_NETWORK, OnNetworkMenuSelect)
 	ON_UPDATE_COMMAND_UI(IDM_OPTIONS_NETWORK, OnNetworkMenuUpdate)
 	ON_WM_CONTEXTMENU()
@@ -878,16 +935,17 @@ BEGIN_MESSAGE_MAP(CLynxWindow,CFrameWnd)
 	ON_COMMAND(IDM_FILE_SNAPSHOT_RAW, OnFileSnapshotRAW)
 	ON_COMMAND(IDM_ESCAPE_FULLSCREEN, OnDisplayEscapeFullScreen)
 	ON_COMMAND(IDM_OPTIONS_DISPLAY_FULLSCN, OnDisplayToggleFullScreen)
+	
 	ON_WM_PAINT()
 	ON_WM_TIMER()
 	ON_WM_KEYDOWN()
 	ON_WM_KEYUP()
-	ON_WM_ACTIVATEAPP()
 	ON_WM_INITMENU()
 	ON_WM_ERASEBKGND()
 	ON_WM_SIZE()
 	ON_WM_DROPFILES()
 	//}}AFX_MSG_MAP
+	ON_COMMAND_RANGE(IDM_RA_RETROACHIEVEMENTS, IDM_RA_MENUEND, OnInvokeDialog)
 	ON_COMMAND_RANGE(IDM_OPTIONS_DISPLAY_MODE_1,IDM_OPTIONS_DISPLAY_MODE_7,OnDisplayModeSelect)
 	ON_UPDATE_COMMAND_UI_RANGE(IDM_OPTIONS_DISPLAY_MODE_1,IDM_OPTIONS_DISPLAY_MODE_7,OnDisplayModeUpdate)
 	ON_COMMAND_RANGE(IDM_OPTIONS_SIZE_NORMAL,IDM_OPTIONS_SIZE_QUAD, OnDisplayZoomSelect)
@@ -908,14 +966,36 @@ inline void CLynxWindow::OnPaint()
 	CPaintDC dc (this);
 //	BeginPaint(NULL);
 
+	ControllerInput input;
+	input.m_bLeftPressed = mKeyDefs.key_left;
+	input.m_bRightPressed = mKeyDefs.key_right;
+	input.m_bDownPressed = mKeyDefs.key_down;
+	input.m_bUpPressed = mKeyDefs.key_up;
+	input.m_bConfirmPressed = mKeyDefs.key_a;
+	input.m_bCancelPressed = mKeyDefs.key_b;
+	input.m_bQuitPressed = mKeyDefs.key_pause;
+
+	RenderAchievementsOverlay(this->m_hWnd, gSystemHalt, input);
+	
+
+	RA_DoAchievementsFrame();
+
+	RA_HandleHTTPResults();
+
 	// Dont attempt to paint if the Lynx object is not constructed, this
 	// can happen on return from full screen with Ctrl-O to open a new file
 	// caused a repaint between the delete and create calls.
 	if(mDisplayNoPainting==TRUE || mDisplayRender==NULL || mpLynx==NULL) return;
 
+	
+
 	try
 	{
-		mDisplayRender->Render(mDisplayOffsetX,mDisplayOffsetY);
+
+		mDisplayRender->Render(mDisplayOffsetX, mDisplayOffsetY);
+
+
+		
 	}
 	catch (_com_error& ex)
 	{
@@ -933,25 +1013,8 @@ void CLynxWindow::OnTimer(UINT nIDEvent)
 
 	if(nIDEvent==HANDY_INFO_TIMER)
 	{
-		// TEST TEST TEST
-//		if(mpNetLynx!=NULL)
-//		{
-//			char info[40];
-//			CDC* fullscnCDC;
-//			HDC fullscnHDC;
-//			IDirectDrawSurfacePtr surfDesc;
-//			surfDesc=((CFullScreenDirectX*)mDisplayRender)->GetFrontSurface();
-//			if(surfDesc)
-//			{
-//				surfDesc->GetDC(&fullscnHDC);
-//				fullscnCDC = CDC::FromHandle (fullscnHDC);
-//				sprintf(info,"RX=%08d TX=%08d ST=%d DAT=%04x",mpNetLynx->mRXcount,mpNetLynx->mTXcount,mpNetLynx->mState,mpNetLynx->mLastRxData);
-//				TextOut(fullscnHDC,0,0,info,strlen(info));
-//				surfDesc->ReleaseDC(fullscnHDC);
-//			}
-//		}
-		// TEST TEST TEST
 
+		
 		//
 		// Display speed information if enabled
 		//
@@ -1021,6 +1084,9 @@ void CLynxWindow::OnTimer(UINT nIDEvent)
 			if(joyinfo.dwButtons&JOY_BUTTON3) lynx_buttons|=BUTTON_OPT1; else lynx_buttons&=BUTTON_OPT1^0xffffffff;
 			// Option 2
 			if(joyinfo.dwButtons&JOY_BUTTON4) lynx_buttons|=BUTTON_OPT2; else lynx_buttons&=BUTTON_OPT2^0xffffffff;
+			// Pause
+			if (joyinfo.dwButtons&JOY_BUTTON5) lynx_buttons |= BUTTON_PAUSE; else lynx_buttons &= BUTTON_PAUSE ^ 0xffffffff;
+
 
 			// Read axis's
 			if(joyinfo.dwYpos<mJoystickYDown)
@@ -1189,7 +1255,7 @@ void CLynxWindow::OnNetworkDataWaiting(WPARAM wparam,LPARAM lparam)
 
 void CLynxWindow::OnNetworkMenuSelect()
 {
-	static firsttime=0;
+	int firsttime=0;
 
 	if(!firsttime)
 	{
@@ -1296,8 +1362,8 @@ void CLynxWindow::OnFileLoad()
 		// up accordingly.
 
 		ULONG rotate=DISPLAY_NO_ROTATE;
-		if(mpLynx->CartGetRotate()==CART_ROTATE_LEFT) rotate=DISPLAY_ROTATE_LEFT;
-		if(mpLynx->CartGetRotate()==CART_ROTATE_RIGHT) rotate=DISPLAY_ROTATE_RIGHT;
+		//if(mpLynx->CartGetRotate()==CART_ROTATE_LEFT) rotate=DISPLAY_ROTATE_LEFT;
+		//if(mpLynx->CartGetRotate()==CART_ROTATE_RIGHT) rotate=DISPLAY_ROTATE_RIGHT;
 
 		// Refresh the video mode to set memory pointers
 		DisplayModeSet(DISPLAY_PRESERVE,DISPLAY_PRESERVE,DISPLAY_PRESERVE,rotate);
@@ -1352,8 +1418,8 @@ void CLynxWindow::OnDropFiles(HDROP hDrop)
 		// up accordingly.
 
 		ULONG rotate=DISPLAY_NO_ROTATE;
-		if(mpLynx->CartGetRotate()==CART_ROTATE_LEFT) rotate=DISPLAY_ROTATE_LEFT;
-		if(mpLynx->CartGetRotate()==CART_ROTATE_RIGHT) rotate=DISPLAY_ROTATE_RIGHT;
+		//if(mpLynx->CartGetRotate()==CART_ROTATE_LEFT) rotate=DISPLAY_ROTATE_LEFT;
+		//if(mpLynx->CartGetRotate()==CART_ROTATE_RIGHT) rotate=DISPLAY_ROTATE_RIGHT;
 
 		// Refresh the video mode to set memory pointers
 		DisplayModeSet(DISPLAY_PRESERVE,DISPLAY_PRESERVE,DISPLAY_PRESERVE,rotate);
@@ -1364,6 +1430,10 @@ void CLynxWindow::OnDropFiles(HDROP hDrop)
 void CLynxWindow::OnFileSnapshotGame()
 {
 	if(mCommandLineMode) return;
+
+	if (RA_HardcoreModeIsActive())	
+		return;
+		
 
 	// If full screen then make windowed
 	if(!DisplayModeWindowed())
@@ -1389,6 +1459,9 @@ void CLynxWindow::OnFileSnapshotGame()
 void CLynxWindow::OnFileSnapshotLoad()
 {
 	if(mCommandLineMode) return;
+
+	if (RA_HardcoreModeIsActive())
+		return;
 
 	// If full screen then make windowed
 	if(!DisplayModeWindowed())
@@ -1564,7 +1637,7 @@ void CLynxWindow::OnFileSnapshotRAW()
 				ULONG start=mpLynx->PeekW_CPU(DISPADR);
 				ULONG end=mpLynx->PeekW_CPU(DISPADR)+8160;
 				// Dump the buffer to the image
-				for(loop=start;loop<end;loop++)
+				for(int loop=start;loop<end;loop++)
 				{
 					image[index++]=(UBYTE)mpLynx->Peek_RAM(loop);
 				}
@@ -1710,6 +1783,8 @@ void CLynxWindow::OnSoundMenuUpdate(CCmdUI *pCmdUI)
 
 void CLynxWindow::OnResetMenuSelect()
 {
+
+	
 	mpLynx->Reset();
 	OnDebuggerUpdate();
 	Invalidate(FALSE);
@@ -1721,11 +1796,16 @@ void CLynxWindow::OnPauseMenuSelect()
 	{
 		gBreakpointHit=TRUE;	// This will force a window redraw in the debug version
 		gSystemHalt=TRUE;		// This will stop the system
+
+		RA_SetPaused(TRUE);
+
 	}
 	else
 	{
 		gSystemHalt=FALSE;		// Make sure we run always
 		gSingleStepMode=FALSE;	// Go for it....
+
+		RA_SetPaused(FALSE);
 	}
 	OnDebuggerUpdate();
 	Invalidate(FALSE);
@@ -1866,6 +1946,30 @@ void CLynxWindow::OnDisplayModeSelect(UINT nID)
 
 	DisplayModeSet(mode,DISPLAY_PRESERVE,DISPLAY_PRESERVE,DISPLAY_PRESERVE);
 }
+
+void CLynxWindow::OnInvokeDialog(UINT nID)
+{
+
+		if (nID == IDM_RA_HARDCORE_MODE)
+		{
+			mpLynx->Reset();
+			OnDebuggerUpdate();
+			Invalidate(FALSE);
+		}
+
+		if (nID >= IDM_RA_RETROACHIEVEMENTS &&
+			nID < IDM_RA_MENUEND)
+		{
+
+			
+
+			RA_InvokeDialog(LOWORD(nID));
+			
+		}
+
+}
+
+
 
 void CLynxWindow::OnDisplayEscapeFullScreen()
 {
@@ -2102,7 +2206,7 @@ void CLynxWindow::OnRAMDumpMenuSelect()
 
 void CLynxWindow::OnAboutBoxSelect()
 {
-	CAboutDialog dlg(IDD_ABOUT_BOX,this,mpLynx->CartGetName(),mpLynx->CartGetManufacturer(),HANDY_VERSION,HANDY_BUILD);
+	CAboutDialog dlg(IDD_ABOUT_BOX,this,mpLynx->CartGetName(),mpLynx->CartGetManufacturer(),HANDY_VERSION,"");
 	dlg.DoModal();
 }
 
@@ -2362,7 +2466,7 @@ void CLynxWindow::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CLynxWindow::OnActivateApp(BOOL bActive, HTASK hTask) 
 {
-	CFrameWnd::OnActivateApp(bActive, hTask);
+	CFrameWnd::OnActivateApp(bActive, (DWORD)hTask);
 	
 // This isnt required now as direct sound controls the focus automagically
 //	// Reset sound status

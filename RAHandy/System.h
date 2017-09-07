@@ -46,6 +46,12 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
+#ifdef SDL_PATCH
+	#define __min(x,y)  (x < y ? x : y); 
+	#define __max(x,y)  (x > y ? x : y); 
+#endif
+
+
 #pragma inline_depth (255)
 #pragma inline_recursion (on)
 
@@ -67,8 +73,8 @@
 #define HANDY_AUDIO_SAMPLE_PERIOD				(HANDY_SYSTEM_FREQ/HANDY_AUDIO_SAMPLE_FREQ)
 #define HANDY_AUDIO_WAVESHAPER_TABLE_LENGTH		0x200000
 
-#ifdef LINUX_PATCH
-#define HANDY_AUDIO_BUFFER_SIZE					4096	// Needed forSDL
+#ifdef SDL_PATCH
+#define HANDY_AUDIO_BUFFER_SIZE					4096	// Needed for SDL
 #else
 #define HANDY_AUDIO_BUFFER_SIZE					(HANDY_AUDIO_SAMPLE_FREQ/4)
 #endif

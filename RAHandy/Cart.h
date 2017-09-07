@@ -121,6 +121,7 @@ class CCart : public CLynxBase
 		void	Poke1(UBYTE data);
 		UBYTE	Peek0(void);
 		UBYTE	Peek1(void);
+		UBYTE*  GetData(void) { return mCartBank0; };
 
 	// Data members
 

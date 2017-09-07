@@ -30,7 +30,7 @@
 
 // -- inlcude all direct x headers here --
 #include <ddraw.h>
-#include <d3d.h>
+#include <d3d9.h>
 #include <dsound.h>
 
 #include <afxcom_.h>

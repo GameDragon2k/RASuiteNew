@@ -24,6 +24,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
+#ifndef ANSI_GCC
 #include "lynxwin.h"
 #include "errorhandler.h"
 #include "warndlg.h"
@@ -85,3 +86,33 @@ int CErrorHandler::Warning(const char *message)
 	}
 	return TRUE;
 }
+#else
+
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include "system.h"
+#include "errorhandler.h"
+
+CErrorHandler::CErrorHandler()
+{
+
+}
+
+CErrorHandler::~CErrorHandler()
+{
+
+}
+
+int CErrorHandler::Fatal(const char *message)
+{
+	printf("Fatal Error: %s\n", message);
+	exit(EXIT_FAILURE);
+}
+
+int CErrorHandler::Warning(const char *message)
+{
+	printf("Warning: %s\n", message);
+	exit(EXIT_FAILURE);
+}
+#endif

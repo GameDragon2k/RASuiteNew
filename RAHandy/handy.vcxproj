@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Dbg|Win32">
+      <Configuration>Debug Dbg</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Dbg|Win32">
+      <Configuration>Release Dbg</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{4311CCB9-6D30-456C-A1CB-57F71ADD9D0C}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dbg|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Dbg|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dbg|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Dbg|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Dbg|Win32'">
+    <OutDir>.\Release_Dbg\</OutDir>
+    <IntDir>.\Release_Dbg\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dbg|Win32'">
+    <OutDir>.\Debug_Dbg\</OutDir>
+    <IntDir>.\Debug_Dbg\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Dbg|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_LYNXDBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release_Dbg\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release_Dbg\handy.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release_Dbg\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release_Dbg\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release_Dbg\handy.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release_Dbg\handy.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>nafxcw.lib libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>Release_Dbg/handybug.exe</OutputFile>
+      <AdditionalDependencies>nafxcw.lib;libcmt.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\handy.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\handy.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\handy.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>Nafxcwd.lib;Libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <OutputFile>.\Debug\LynxSystem.exe</OutputFile>
+      <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dbg|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_LYNXDBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug_Dbg\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug_Dbg\handy.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug_Dbg\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug_Dbg\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug_Dbg\handy.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug_Dbg\handy.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>Nafxcwd.lib Libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <OutputFile>Debug_Dbg/handybug.exe</OutputFile>
+      <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\handy.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\handy.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\handy.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>nafxcw.lib libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Release\LynxSystem.exe</OutputFile>
+      <AdditionalDependencies>nafxcw.lib;libcmt.lib;winmm.lib;wsock32.lib;Winhttp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\RA_Integration\RA_Interface.cpp" />
+    <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="Codewin.cpp" />
+    <ClCompile Include="ColorStatic.cpp" />
+    <ClCompile Include="Debugger.cpp" />
+    <ClCompile Include="Debuggerwin.cpp" />
+    <ClCompile Include="DirectSoundPlayer.cpp" />
+    <ClCompile Include="DispLine.cpp" />
+    <ClCompile Include="Dmpwndlg.cpp" />
+    <ClCompile Include="Dumpwin.cpp" />
+    <ClCompile Include="DxError.cpp" />
+    <ClCompile Include="EditLine.cpp" />
+    <ClCompile Include="ErrorHandler.cpp" />
+    <ClCompile Include="gfxwin.cpp" />
+    <ClCompile Include="HexEdit.cpp" />
+    <ClCompile Include="keydefs.cpp" />
+    <ClCompile Include="Lynxapp.cpp" />
+    <ClCompile Include="Lynxwin.cpp" />
+    <ClCompile Include="Memmap.cpp" />
+    <ClCompile Include="Mikie.cpp" />
+    <ClCompile Include="netobj.cpp" />
+    <ClCompile Include="Overlay.cpp" />
+    <ClCompile Include="Ram.cpp" />
+    <ClCompile Include="RA_Implementation.cpp" />
+    <ClCompile Include="Rom.cpp" />
+    <ClCompile Include="Susie.cpp" />
+    <ClCompile Include="System.cpp" />
+    <ClCompile Include="Tracedlg.cpp" />
+    <ClCompile Include="Tracewin.cpp" />
+    <ClCompile Include="windowgdi.cpp" />
+    <ClCompile Include="zlib-113\adler32.c" />
+    <ClCompile Include="zlib-113\compress.c" />
+    <ClCompile Include="zlib-113\crc32.c" />
+    <ClCompile Include="zlib-113\deflate.c" />
+    <ClCompile Include="zlib-113\gzio.c" />
+    <ClCompile Include="zlib-113\infblock.c" />
+    <ClCompile Include="zlib-113\infcodes.c" />
+    <ClCompile Include="zlib-113\inffast.c" />
+    <ClCompile Include="zlib-113\inflate.c" />
+    <ClCompile Include="zlib-113\inftrees.c" />
+    <ClCompile Include="zlib-113\infutil.c" />
+    <ClCompile Include="zlib-113\trees.c" />
+    <ClCompile Include="zlib-113\uncompr.c" />
+    <ClCompile Include="zlib-113\unzip.c" />
+    <ClCompile Include="zlib-113\zutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\RA_Integration\RA_Interface.h" />
+    <ClInclude Include="Aboutdlg.h" />
+    <ClInclude Include="C6502mak.h" />
+    <ClInclude Include="C65c02.h" />
+    <ClInclude Include="Cart.h" />
+    <ClInclude Include="CodeWin.h" />
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="ColorStatic.h" />
+    <ClInclude Include="Debugger.h" />
+    <ClInclude Include="Debuggerwin.h" />
+    <ClInclude Include="DirectSoundPlayer.h" />
+    <ClInclude Include="DirectX.h" />
+    <ClInclude Include="Dis6502.h" />
+    <ClInclude Include="DispLine.h" />
+    <ClInclude Include="Dmpwndlg.h" />
+    <ClInclude Include="DumpWin.h" />
+    <ClInclude Include="EditLine.h" />
+    <ClInclude Include="ErrorHandler.h" />
+    <ClInclude Include="ErrorInterface.h" />
+    <ClInclude Include="FullScreenDirectX.h" />
+    <ClInclude Include="FullScreenEagle.h" />
+    <ClInclude Include="fullscreenlcd.h" />
+    <ClInclude Include="gfxwin.h" />
+    <ClInclude Include="HexEdit.h" />
+    <ClInclude Include="keydefs.h" />
+    <ClInclude Include="Lynxapp.h" />
+    <ClInclude Include="lynxbase.h" />
+    <ClInclude Include="Lynxdef.h" />
+    <ClInclude Include="lynxrender.h" />
+    <ClInclude Include="Lynxwin.h" />
+    <ClInclude Include="Machine.h" />
+    <ClInclude Include="Memfault.h" />
+    <ClInclude Include="Memmap.h" />
+    <ClInclude Include="Mikie.h" />
+    <ClInclude Include="netobj.h" />
+    <ClInclude Include="Overlay.h" />
+    <ClInclude Include="pixblend.h" />
+    <ClInclude Include="Ram.h" />
+    <ClInclude Include="RA_Implementation.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Rom.h" />
+    <ClInclude Include="Susie.h" />
+    <ClInclude Include="Sysbase.h" />
+    <ClInclude Include="System.h" />
+    <ClInclude Include="Tracedlg.h" />
+    <ClInclude Include="Tracewin.h" />
+    <ClInclude Include="warndlg.h" />
+    <ClInclude Include="widget.h" />
+    <ClInclude Include="WindowDirectX.h" />
+    <ClInclude Include="WindowEagle.h" />
+    <ClInclude Include="windowgdi.h" />
+    <ClInclude Include="windowlcd.h" />
+    <ClInclude Include="zlib-113\deflate.h" />
+    <ClInclude Include="zlib-113\infblock.h" />
+    <ClInclude Include="zlib-113\infcodes.h" />
+    <ClInclude Include="zlib-113\inffast.h" />
+    <ClInclude Include="zlib-113\inffixed.h" />
+    <ClInclude Include="zlib-113\inftrees.h" />
+    <ClInclude Include="zlib-113\infutil.h" />
+    <ClInclude Include="zlib-113\trees.h" />
+    <ClInclude Include="zlib-113\unzip.h" />
+    <ClInclude Include="zlib-113\zconf.h" />
+    <ClInclude Include="zlib-113\zlib.h" />
+    <ClInclude Include="zlib-113\zutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ICON1.ICO" />
+    <Image Include="LynxBackground.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="lynxmenu.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="public\Contents.txt" />
+    <Text Include="public\handybug\dvreadme.txt" />
+    <Text Include="public\license.txt" />
+    <Text Include="public\Readme.txt" />
+    <Text Include="public\whatsnew.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

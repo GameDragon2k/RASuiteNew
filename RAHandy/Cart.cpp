@@ -54,7 +54,6 @@
 #include "cart.h"
 #include "./zlib-113/zlib.h"
 
-
 CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 {
 	TRACE_CART1("CCart() called with %s",gamefile);
@@ -83,13 +82,7 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 
 		if(header.magic[0]!='L' || header.magic[1]!='Y' || header.magic[2]!='N' || header.magic[3]!='X' || header.version!=1)
 		{
-			CLynxException lynxerr;
-
-			lynxerr.Message() << "Handy Error: File format invalid (Magic No)";
-			lynxerr.Description()
-				<< "The image you selected was not a recognised game cartridge format." << endl
-				<< "(see the Handy User Guide for more information).";
-			throw(lynxerr);
+			
 		}
 
 		// Setup name & manufacturer
@@ -155,12 +148,7 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 			mCountMask0=0x7ff;
 			break;
 		default:
-			CLynxException lynxerr;
-			lynxerr.Message() << "Handy Error: File format invalid (Bank0)";
-			lynxerr.Description()
-				<< "The image you selected was not a recognised game cartridge format." << endl
-				<< "(see the Handy User Guide for more information).";
-			throw(lynxerr);
+			
 			break;
 	}
 	TRACE_CART1("CCart() - Bank0 = $%06x",mMaskBank0);
@@ -198,12 +186,7 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 			mCountMask1=0x7ff;
 			break;
 		default:
-			CLynxException lynxerr;
-			lynxerr.Message() << "Handy Error: File format invalid (Bank1)";
-			lynxerr.Description()
-				<< "The image you selected was not a recognised game cartridge format." << endl
-				<< "(see the Handy User Guide for more information).";
-			throw(lynxerr);
+
 			break;
 	}
 	TRACE_CART1("CCart() - Bank1 = $%06x",mMaskBank1);
@@ -222,6 +205,7 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 	int cartsize = __max(0, int(gamesize - sizeof(LYNX_HEADER)));
 	int bank0size = __min(cartsize, (int)(mMaskBank0+1));
 	int bank1size = __min(cartsize, (int)(mMaskBank1+1));
+
 	memcpy(
 		mCartBank0,
 		gamedata+(sizeof(LYNX_HEADER)),

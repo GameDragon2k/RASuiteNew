@@ -62,6 +62,19 @@
 #include "./zlib-113/zlib.h"
 #include "./zlib-113/unzip.h"
 
+#include "../RA_Integration/RA_Interface.h"
+
+
+
+// The following is needed since GCC doesn't seem to understand the _splitpath function.
+// Because of this "problem", an additional header file is created which resides the
+// _splitpath function als well as other dependencies.
+//
+// Source : Usenetposting done by Martin Schmidt
+#ifdef SDL_PATCH
+	#include "stdlib_gcc_extra.h"
+#endif
+
 int lss_read(void* dest,int varsize, int varcount,LSS_FILE *fp)
 {
 	ULONG copysize;
@@ -113,12 +126,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
 			if(unzGoToFirstFile(fp)!=UNZ_OK)
 			{
 				unzClose(fp);
-				CLynxException lynxerr;
-				lynxerr.Message() << "Handy Error: ZIP File select problems" ;
-				lynxerr.Description()
-					<< "The file you selected could not be read." << endl
-					<< "(The ZIP file may be corrupted)." << endl ;
-				throw(lynxerr);
+
 			}
 			
 			gotIt = FALSE;
@@ -136,9 +144,9 @@ CSystem::CSystem(char* gamefile,char* romfile)
 					{
 						char buf[4];
 					
-						ptr++; buf[0] = tolower(*ptr);
-						ptr++; buf[1] = tolower(*ptr);
-						ptr++; buf[2] = tolower(*ptr);
+						ptr++; buf[0] = (*ptr);
+						ptr++; buf[1] = (*ptr);
+						ptr++; buf[2] = (*ptr);
 						buf[3] = 0;
 						if (!strcmp(buf, "lnx") || !strcmp(buf, "com") || !strcmp(buf, "o"))
 						{
@@ -168,13 +176,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
 						unzCloseCurrentFile(fp);
 						unzClose(fp);
 						delete filememory;
-						// Throw a wobbly
-						CLynxException lynxerr;
-						lynxerr.Message() << "Handy Error: ZIP File load problems" ;
-						lynxerr.Description()
-							<< "The zip file you selected could not be loaded." << endl
-							<< "(The ZIP file may be corrupted)." << endl ;
-						throw(lynxerr);
+
 					}
 
 					// Got it!
@@ -185,22 +187,12 @@ CSystem::CSystem(char* gamefile,char* romfile)
 			}
 			else
 			{
-				CLynxException lynxerr;
-				lynxerr.Message() << "Handy Error: ZIP File load problems" ;
-				lynxerr.Description()
-					<< "The file you selected could not be loaded." << endl
-					<< "Could not find a Lynx file in the ZIP archive." << endl ;
-				throw(lynxerr);
+				
 			}
 		}
 		else
 		{
-			CLynxException lynxerr;
-			lynxerr.Message() << "Handy Error: ZIP File open problems" ;
-			lynxerr.Description()
-				<< "The file you selected could not be opened." << endl
-				<< "(The ZIP file may be corrupted)." << endl ;
-			throw(lynxerr);
+			
 		}
 	}
 	else
@@ -211,14 +203,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
 		// Open the cartridge file for reading
 		if((fp=fopen(gamefile,"rb"))==NULL)
 		{
-			CLynxException lynxerr;
 
-			lynxerr.Message() << "Handy Error: File Open Error";
-			lynxerr.Description()
-				<< "The lynx emulator will not run without a cartridge image." << endl
-				<< "\"" << gamefile << "\" was not found in the place you " << endl
-				<< "specified. (see the Handy User Guide for more information).";
-			throw(lynxerr);
 		}
 
 		// How big is the file ??
@@ -229,15 +214,9 @@ CSystem::CSystem(char* gamefile,char* romfile)
 
 		if(fread(filememory,sizeof(char),filesize,fp)!=filesize)
 		{
-			CLynxException lynxerr;
 			delete filememory;
 
-			lynxerr.Message() << "Handy Error: Unspecified Load error (Header)";
-			lynxerr.Description()
-				<< "The lynx emulator will not run without a cartridge image." << endl
-				<< "It appears that your cartridge image may be corrupted or there is" << endl
-				<< "some other error.(see the Handy User Guide for more information)";
-			throw(lynxerr);
+			
 		}
 
 		fclose(fp);
@@ -256,14 +235,10 @@ CSystem::CSystem(char* gamefile,char* romfile)
 		else if(!strcmp(&clip[0],LSS_VERSION_OLD)) mFileType=HANDY_FILETYPE_SNAPSHOT;
 		else
 		{
-			CLynxException lynxerr;
+			
 			delete filememory;
 			mFileType=HANDY_FILETYPE_ILLEGAL;
-			lynxerr.Message() << "Handy Error: File format invalid!";
-			lynxerr.Description()
-				<< "The image you selected was not a recognised game cartridge format." << endl
-				<< "(see the Handy User Guide for more information).";
-			throw(lynxerr);
+
 		}
 	}
 	
@@ -294,13 +269,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
 				// Open the howard file for reading
 				if((fp=fopen(cartgo,"rb"))==NULL)
 				{
-					CLynxException lynxerr;
-					delete filememory;
-					lynxerr.Message() << "Handy Error: Howard.o File Open Error";
-					lynxerr.Description()
-						<< "Headerless cartridges need howard.o bootfile to ." << endl
-						<< "be able to run correctly, could not open file. " << endl;
-					throw(lynxerr);
+
 				}
 
 				// How big is the file ??
@@ -311,24 +280,24 @@ CSystem::CSystem(char* gamefile,char* romfile)
 
 				if(fread(howardmemory,sizeof(char),howardsize,fp)!=howardsize)
 				{
-					CLynxException lynxerr;
+
 					delete filememory;
 					delete howardmemory;
-					lynxerr.Message() << "Handy Error: Howard.o load error (Header)";
-					lynxerr.Description()
-						<< "Howard.o could not be read????." << endl;
-					throw(lynxerr);
+
 				}
 
 				fclose(fp);
 
 				// Pass it to RAM to load
 				mRam = new CRam(howardmemory,howardsize);
+				
+
 			}
 			else
 			{
 				mRam = new CRam(0,0);
 			}
+
 			break;
 		case HANDY_FILETYPE_HOMEBREW:
 			mCart = new CCart(0,0);
@@ -360,6 +329,9 @@ CSystem::CSystem(char* gamefile,char* romfile)
 
 	Reset();
 
+	RA_OnLoadNewRom(mCart->GetData(), ROM_SIZE, mRam->GetRamPointer(), RAM_SIZE, NULL, 0);
+
+
 // If this is a snapshot type then restore the context
 
 	if(mFileType==HANDY_FILETYPE_SNAPSHOT)
@@ -367,12 +339,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
 		if(!ContextLoad(gamefile))
 		{
 			Reset();
-			CLynxException lynxerr;
-			lynxerr.Message() << "Handy Error: Snapshot load error" ;
-			lynxerr.Description()
-				<< "The snapshot you selected could not be loaded." << endl
-				<< "(The file format was not recognised by Handy)." << endl ;
-			throw(lynxerr);
+
 		}
 	}
 	if(filesize) delete filememory;
@@ -548,9 +515,9 @@ bool CSystem::ContextLoad(char *context)
 					{
 						char buf[4];
 					
-						ptr++; buf[0] = tolower(*ptr);
-						ptr++; buf[1] = tolower(*ptr);
-						ptr++; buf[2] = tolower(*ptr);
+						ptr++; buf[0] = (*ptr);
+						ptr++; buf[1] = (*ptr);
+						ptr++; buf[2] = (*ptr);
 						buf[3] = 0;
 						if (!strcmp(buf, "lss"))
 						{

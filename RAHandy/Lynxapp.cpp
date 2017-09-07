@@ -48,6 +48,9 @@
 #include "lynxwin.h"
 #include "lynxapp.h"
 #include "error.h"
+#include "RA_Implementation.h"
+#include "../RA_Integration/RA_Interface.h"
+
 
 //#ifdef _DEBUG
 //#define new DEBUG_NEW
@@ -62,8 +65,7 @@ BOOL CLynxApplication::InitInstance()
 	AfxOleInit();
 
 	// Setup the registry
-
-	LynxEmulator.SetRegistryKey("Irwell Expert Systems");
+	LynxEmulator.SetRegistryKey("RAHandy");
 
 	// Pass down the command line
 	CString gamefile(m_lpCmdLine);
@@ -82,8 +84,20 @@ BOOL CLynxApplication::InitInstance()
 		return FALSE;
 	}
 
+
 	m_pMainWnd->ShowWindow(m_nCmdShow);
 	m_pMainWnd->UpdateWindow();
+
+	RA_Init(pWnd->m_hWnd, RA_ATARI, "0.020");
+
+	RA_InitShared();
+
+	RA_AttemptLogin();
+
+	RA_HandleHTTPResults();
+
+	RA_UpdateAppTitle("");
+
 	return TRUE;
 }
 

@@ -135,8 +135,13 @@ typedef struct
 class C65C02
 {
 	public:
+#ifndef SDL_PATCH
 		C65C02::C65C02(CSystemBase& parent)
 			:mSystem(parent)
+#else
+		C65C02(CSystemBase& parent)
+			:mSystem(parent)
+#endif
 		{
 			TRACE_CPU0("C65C02()");
 			// Compute the BCD lookup table
@@ -153,7 +158,11 @@ class C65C02
 			
 		}
 
+#ifndef ANSI_GCC
 		C65C02::~C65C02()
+#else
+		~C65C02()
+#endif
 		{
 			TRACE_CPU0("~C65C02()");
 		}

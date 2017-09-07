@@ -72,11 +72,13 @@ class CRom : public CLynxBase
 		ULONG	ReadCycle(void) {return 5;};
 		ULONG	WriteCycle(void) {return 5;};
 		ULONG	ObjectSize(void) {return ROM_SIZE;};
+		UBYTE*	GetRomPointer(void) { return mRomData; };
 
 	// Data members
 
 	public:
 		bool	mWriteEnable;
+		UBYTE   RomData[ROM_SIZE];
 	private:
 		UBYTE	mRomData[ROM_SIZE];
 		char	mFileName[1024];

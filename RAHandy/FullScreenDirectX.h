@@ -36,6 +36,8 @@
 #include "pixblend.h"
 #include "lynxrender.h"
 
+#include "../RA_Integration/RA_Interface.h"
+
 /////////////////////////////////////////////////////////////////////////////
 // Full Screen Management object
 
@@ -84,13 +86,15 @@ class CFullScreenDirectX : public CLynxRender
 			// Save window style, position, size, menu
 			m_cwnd_style=::GetWindowLong(pcwnd->m_hWnd,GWL_STYLE);
 			m_cwnd_exstyle=::GetWindowLong(pcwnd->m_hWnd,GWL_EXSTYLE);
-			m_cwnd_hmenu=::GetMenu(pcwnd->m_hWnd);
+			m_cwnd_hmenu =::GetMenu(pcwnd->m_hWnd);
 			pcwnd->GetWindowRect(&m_cwnd_rect);
 
 			// Set window style, position, size, menu
 
 			::SetWindowLong(pcwnd->m_hWnd,GWL_STYLE, WS_POPUP);
 			::SetWindowLong(pcwnd->m_hWnd,GWL_EXSTYLE,0);
+
+
 			::SetMenu(pcwnd->m_hWnd,NULL);
 			::SetWindowPos(pcwnd->m_hWnd,HWND_TOP,0,0,mWidth,mHeight,SWP_SHOWWINDOW);
 			::ShowWindow(pcwnd->m_hWnd,SW_SHOW);
@@ -141,12 +145,17 @@ class CFullScreenDirectX : public CLynxRender
 
 				::SetWindowLong(pcwnd->m_hWnd,GWL_STYLE, m_cwnd_style);
 				::SetWindowLong(pcwnd->m_hWnd,GWL_EXSTYLE,m_cwnd_exstyle);
+
+
 				::SetMenu(pcwnd->m_hWnd,m_cwnd_hmenu);
 				::SetWindowPos(pcwnd->m_hWnd,HWND_TOP,m_cwnd_rect.left,m_cwnd_rect.top,m_cwnd_rect.Width(),m_cwnd_rect.Height(),0);
 
 				// Return failure
 				return false;
 			}
+
+
+			
 
 			DDBLTFX ddbltfx;
 			ddbltfx.dwSize = sizeof(ddbltfx);

@@ -32,18 +32,18 @@
 /////////////////////////////////////////////////////////////////////////////
 // CKeyDefs dialog
 
-typedef struct
-{
-	UINT key_up;
-	UINT key_down;
-	UINT key_left;
-	UINT key_right;
-	UINT key_a;
-	UINT key_b;
-	UINT key_opt1;
-	UINT key_opt2;
-	UINT key_pause;
-}KEYCONF;
+	typedef struct
+	{
+		UINT key_up;
+		UINT key_down;
+		UINT key_left;
+		UINT key_right;
+		UINT key_a;
+		UINT key_b;
+		UINT key_opt1;
+		UINT key_opt2;
+		UINT key_pause;
+	}KEYCONF;
 
 // Defined for convenience as windows doesnt bother to define them
 #define	VK_1	'1'

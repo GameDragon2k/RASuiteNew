@@ -49,6 +49,9 @@
 #define RAM_ADDR_MASK			0xffff
 #define DEFAULT_RAM_CONTENTS	0xff
 
+unsigned char RAMByteReader(unsigned int nOffs);
+void RAMByteWriter(unsigned int nOffs, unsigned int nVal);
+
 typedef struct
 {
    UWORD   jump;

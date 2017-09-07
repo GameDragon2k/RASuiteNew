@@ -52,8 +52,13 @@
 #include <string.h>
 #include "system.h"
 #include "rom.h"
+#include "ram.h"
+
+
 
 extern CErrorInterface *gError;
+
+
 
 CRom::CRom(char *romfile)
 {
@@ -70,31 +75,19 @@ CRom::CRom(char *romfile)
 
 	if((fp=fopen(mFileName,"rb"))==NULL)
 	{
-		CLynxException lynxerr;
 
-		lynxerr.Message() << "The Lynx Boot ROM image couldn't be located!";
-		lynxerr.Description()
-			<< "The lynx emulator will not run without the Boot ROM image." << endl
-			<< "\"" << romfile << "\" was not found in the lynx emulator " << endl
-			<< "directory (see the LynxEmu User Guide for more information).";
-		throw(lynxerr);
 	}
 
 	// Read in the 512 bytes
 
 	if(fread(mRomData,sizeof(char),ROM_SIZE,fp)!=ROM_SIZE)
 	{
-		CLynxException lynxerr;
-
-		lynxerr.Message() << "The Lynx Boot ROM image couldn't be loaded!";
-		lynxerr.Description()
-			<< "The lynx emulator will not run without the Boot ROM image." << endl
-			<< "It appears that your BOOT image may be corrupted or there is" << endl
-			<< "some other error.(see the LynxEmu User Guide for more information)";
-		throw(lynxerr);
+		
 	}
+	
 
 	fclose(fp);
+
 
 	// Check the code that has been loaded and report an error if its a
 	// fake version of the bootrom

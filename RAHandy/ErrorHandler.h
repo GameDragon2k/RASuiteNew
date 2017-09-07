@@ -34,13 +34,19 @@
 class CErrorHandler : public CErrorInterface
 {
 public:
+#ifndef SDL_PATCH
 	CErrorHandler(CLynxWindow *lwin);
+#else
+	CErrorHandler();
+#endif
 	virtual ~CErrorHandler();
 	int Warning(const char *message);
 	int Fatal(const char *message);
 
 private:
+#ifndef SDL_PATCH
 	CLynxWindow *mpLynxWin;
+#endif
 };
 
 #endif // !defined(AFX_ERRORHANDLER_H__A3B25DE1_6F78_11D2_8E90_444553540000__INCLUDED_)
