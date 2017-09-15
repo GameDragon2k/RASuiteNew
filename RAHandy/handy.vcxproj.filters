@@ -16,9 +16,6 @@
       <UniqueIdentifier>{ec7a71ea-a299-45ee-bece-0646cbd5cbc5}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
-    <Filter Include="Support Files">
-      <UniqueIdentifier>{5e8488e3-5256-45b0-ab28-ce1ea3559cb2}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="zlib-113\adler32.c">
@@ -355,30 +352,10 @@
     <Image Include="ICON1.ICO">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="LynxBackground.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="lynxmenu.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="public\Contents.txt">
-      <Filter>Support Files</Filter>
-    </Text>
-    <Text Include="public\handybug\dvreadme.txt">
-      <Filter>Support Files</Filter>
-    </Text>
-    <Text Include="public\license.txt">
-      <Filter>Support Files</Filter>
-    </Text>
-    <Text Include="public\Readme.txt">
-      <Filter>Support Files</Filter>
-    </Text>
-    <Text Include="public\whatsnew.txt">
-      <Filter>Support Files</Filter>
-    </Text>
   </ItemGroup>
 </Project>

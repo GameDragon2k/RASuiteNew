@@ -371,17 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="ICON1.ICO" />
-    <Image Include="LynxBackground.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="lynxmenu.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="public\Contents.txt" />
-    <Text Include="public\handybug\dvreadme.txt" />
-    <Text Include="public\license.txt" />
-    <Text Include="public\Readme.txt" />
-    <Text Include="public\whatsnew.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

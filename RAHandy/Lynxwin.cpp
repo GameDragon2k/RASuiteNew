@@ -478,7 +478,7 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 
 				if (newsystem == NULL)
 				{
-				CString filter="Handy Filetypes (*.zip;*.lnx;*.com;*.o)|*.zip;*.lnx;*.com;*.o|Lynx Images (*.zip;*.lnx)|*.zip;*.lnx|Homebrew Images (*.zip;*.com;*.o)|*.zip;*.com;*.o|ZIP Files (*.zip)|*.zip|All Files (*.*)|*.*||";
+				CString filter="Handy Filetypes (*.lnx*)|*.lnx|All Files (*.*)|*.*||";
 				gamefile=mpLynxApp->GetProfileString(REGISTRY_VERSION,"DefaultGameFile","");
 				// Check if gamefile exists if so then load, else dialog
 				CFileDialog	dlg(TRUE,"lnx",gamefile,OFN_PATHMUSTEXIST|OFN_FILEMUSTEXIST|OFN_HIDEREADONLY,filter,NULL);
@@ -487,7 +487,7 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 				{
 					gamefile="";
 					dlg.CloseWindow();
-					newsystem = new CSystem((char*)LPCTSTR("BIOS.lnx"), (char*)LPCTSTR(romfile));
+					newsystem = new CSystem((char*)LPCTSTR("lynxboot.img"), (char*)LPCTSTR(romfile));
 				}
 				else
 				{

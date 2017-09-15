@@ -61,7 +61,7 @@
 
 #endif
 
-#define DEFAULT_CART_CONTENTS	0x11
+#define DEFAULT_CART_CONTENTS	0xFF
 
 enum CTYPE {UNUSED,C64K,C128K,C256K,C512K,C1024K};
 
@@ -78,7 +78,8 @@ typedef struct
    UBYTE   cartname[32];
    UBYTE   manufname[16];
    UBYTE   rotation; 
-   UBYTE   spare[5];
+   UBYTE   aud_bits;
+   UBYTE   spare[4];
 }LYNX_HEADER;
 
 
@@ -139,7 +140,8 @@ class CCart : public CLynxBase
 		char	mName[33];
 		char	mManufacturer[17];
 		ULONG	mRotation;
-		ULONG	mHeaderLess;
+		bool	mAudinFlag;
+		int		mHeaderLess;
 
 		ULONG	mCounter;
 		ULONG	mShifter;

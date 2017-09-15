@@ -203,6 +203,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
 		// Open the cartridge file for reading
 		if((fp=fopen(gamefile,"rb"))==NULL)
 		{
+			fprintf(stderr, "Invalid Cart.\n");
 
 		}
 
@@ -233,10 +234,16 @@ CSystem::CSystem(char* gamefile,char* romfile)
 		if(!strcmp(&clip[6],"BS93")) mFileType=HANDY_FILETYPE_HOMEBREW;
 		else if(!strcmp(&clip[0],"LYNX")) mFileType=HANDY_FILETYPE_LNX;
 		else if(!strcmp(&clip[0],LSS_VERSION_OLD)) mFileType=HANDY_FILETYPE_SNAPSHOT;
+		else if (filesize == 128 * 1024 || filesize == 256 * 1024 || filesize == 512 * 1024)
+		{
+			fprintf(stderr, "Invalid Cart (type). but 128/256/512k size -> set to RAW and try to load raw rom image\n");
+			mFileType = HANDY_FILETYPE_RAW;
+			//delete filememory;// WHY????? -> crash!
+		}
 		else
 		{
 			
-			delete filememory;
+			//delete filememory;
 			mFileType=HANDY_FILETYPE_ILLEGAL;
 
 		}
@@ -254,6 +261,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
 
 	switch(mFileType)
 	{
+		case HANDY_FILETYPE_RAW:
 		case HANDY_FILETYPE_LNX:
 			mCart = new CCart(filememory,filesize);
 			if(mCart->CartHeaderLess())
@@ -269,7 +277,8 @@ CSystem::CSystem(char* gamefile,char* romfile)
 				// Open the howard file for reading
 				if((fp=fopen(cartgo,"rb"))==NULL)
 				{
-
+					fprintf(stderr, "Invalid Cart.\n");
+					delete filememory;
 				}
 
 				// How big is the file ??

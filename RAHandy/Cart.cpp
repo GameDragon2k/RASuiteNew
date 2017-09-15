@@ -56,13 +56,14 @@
 
 CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 {
+	int headersize = 0
 	TRACE_CART1("CCart() called with %s",gamefile);
 	LYNX_HEADER	header;
 
 	mWriteEnableBank0=FALSE;
 	mWriteEnableBank1=FALSE;
 	mCartRAM=FALSE;
-	mHeaderLess=FALSE;
+	mHeaderLess=0;
 	mCRC32=0;
 	mCRC32=crc32(mCRC32,gamedata,gamesize);
 	
@@ -83,6 +84,14 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 		if(header.magic[0]!='L' || header.magic[1]!='Y' || header.magic[2]!='N' || header.magic[3]!='X' || header.version!=1)
 		{
 			
+			memset(&header, 0, sizeof(LYNX_HEADER));
+			fprintf(stderr, "Invalid cart (no header?).\nGuessing a ROM layout...\n");
+			strncpy((char*)&header.cartname, "NO HEADER", 32);
+			strncpy((char*)&header.manufname, "HANDY", 16);
+			header.page_size_bank0 = gamesize >> 8;// Hard workaround...
+		}
+		else {
+			headersize = sizeof(LYNX_HEADER);
 		}
 
 		// Setup name & manufacturer
@@ -94,6 +103,7 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 
 		mRotation=header.rotation;
 		if(mRotation!=CART_NO_ROTATE && mRotation!=CART_ROTATE_LEFT && mRotation!=CART_ROTATE_RIGHT) mRotation=CART_NO_ROTATE;
+		mAudinFlag = (header.aud_bits & 0x01);
 	}
 	else
 	{
@@ -106,7 +116,7 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 		strcpy(mManufacturer,"<No cart loaded>");
 
 		// Setup rotation
-
+		mAudinFlag = false;
 		mRotation=CART_NO_ROTATE;
 	}
 	
@@ -202,13 +212,13 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 
 	// Initialiase
 
-	int cartsize = __max(0, int(gamesize - sizeof(LYNX_HEADER)));
+	int cartsize = __max(0, int(gamesize - headersize));
 	int bank0size = __min(cartsize, (int)(mMaskBank0+1));
 	int bank1size = __min(cartsize, (int)(mMaskBank1+1));
 
 	memcpy(
 		mCartBank0,
-		gamedata+(sizeof(LYNX_HEADER)),
+		gamedata+(headersize),
 		bank0size);
 	memset(
 		mCartBank0 + bank0size,
@@ -216,12 +226,29 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 		mMaskBank0+1 - bank0size);
 	memcpy(
 		mCartBank1,
-		gamedata+(sizeof(LYNX_HEADER)),
+		gamedata+(headersize),
 		bank1size);
 	memset(
 		mCartBank1 + bank0size,
 		DEFAULT_CART_CONTENTS,
 		mMaskBank1+1 - bank1size);
+
+
+	if (mAudinFlag) {// TODO clean up code
+		memcpy(
+			mCartBank0,
+			gamedata + (headersize + bank0size + bank1size),
+			bank0size);
+
+		memcpy(
+			mCartBank1,
+			gamedata + (headersize + bank0size + bank1size + bank0size),
+			bank1size);
+
+	}
+
+	if (bank0size == 0) bank0size = 1;// workaround ...
+	if (bank1size == 0) bank1size = 1;// workaround ...
 
 	// Copy the cart banks from the image
 	if(gamesize)
@@ -233,10 +260,10 @@ CCart::CCart(UBYTE *gamedata,ULONG gamesize)
 		//
 		// Check if this is a headerless cart
 		//
-		mHeaderLess=TRUE;
+		mHeaderLess=1;
 		for(int loop=0;loop<32;loop++)
 		{
-			if(mCartBank0[loop&mMaskBank0]!=0x00) mHeaderLess=FALSE;
+			if(mCartBank0[loop&mMaskBank0]!=0x00) mHeaderLess=0;
 		}
 		TRACE_CART1("CCart() - mHeaderLess=%d",mHeaderLess);		
 	}
