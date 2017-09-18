@@ -24,9 +24,9 @@
 #define _INC_DIRECTX_
 
 // -- make sure the guids are linked in --
-#pragma comment (lib, "dxguid")
-#pragma comment (lib, "ddraw")
-#pragma comment (lib, "dsound")
+#pragma comment (lib, "../libs/dxguid")
+#pragma comment (lib, "../libs/ddraw")
+#pragma comment (lib, "../libs/dsound")
 
 // -- inlcude all direct x headers here --
 #include <ddraw.h>
