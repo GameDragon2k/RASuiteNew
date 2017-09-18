@@ -372,6 +372,7 @@ private:
 	ULONG		mDisplayMode;
 	BOOL		mDisplayNoPainting;
 	BOOL		mHardcoreActive;
+	BOOL		mStartBoot;
 	BOOL		mCommandLineMode;
 
 	ULONG		mTimerID;

@@ -94,6 +94,7 @@ CLynxWindow::CLynxWindow(CString gamefile)
 	mFrameCount=0;
 	mFrameSkip=0;
 	mHardcoreActive=FALSE;
+	mStartBoot=FALSE;
 	// Init display stuff so it will create correctly
 
 	mDisplayRender=NULL;
@@ -463,6 +464,13 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 		file.Close();
 	}
 	
+	// Create the system object
+	if (!mStartBoot)
+	{
+	newsystem = new CSystem((char*)LPCTSTR("lynxboot.img"), (char*)LPCTSTR(romfile));
+	mStartBoot = TRUE;
+	}
+
 	// Loop around the file open menu until we have cart or the user
 	// has cancelled the operation
 	do
@@ -471,11 +479,7 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 		{
 			if(!fileprovided)
 			{
-
-				// Create the system object
-				
-				
-
+							
 				if (newsystem == NULL)
 				{
 				CString filter="Handy Filetypes (*.lnx*)|*.lnx|All Files (*.*)|*.*||";
@@ -966,6 +970,7 @@ inline void CLynxWindow::OnPaint()
 	CPaintDC dc (this);
 //	BeginPaint(NULL);
 
+
 	ControllerInput input;
 	input.m_bLeftPressed = mKeyDefs.key_left;
 	input.m_bRightPressed = mKeyDefs.key_right;
@@ -1010,6 +1015,9 @@ void CLynxWindow::OnTimer(UINT nIDEvent)
 {
 	// Abort if no valid Lynx or Display
 	if(mpLynx==NULL || mDisplayRender==NULL) return;
+
+
+
 
 	if(nIDEvent==HANDY_INFO_TIMER)
 	{
