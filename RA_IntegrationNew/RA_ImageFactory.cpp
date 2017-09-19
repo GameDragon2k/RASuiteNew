@@ -294,8 +294,15 @@ HBITMAP LoadLocalPNG( const std::string& sPath, const RASize& sz )
 	// and convert the pixel format
 	IWICBitmapSource* pToRenderBitmapSource = nullptr;
 	if( SUCCEEDED( hr ) )
-		hr = ConvertBitmapSource( { 0, 0, sz.Width(), sz.Height() }, pToRenderBitmapSource );
+		{
 
+		RECT rectangle;
+		rectangle.left = 0;
+		rectangle.top = 0;
+		rectangle.right = sz.Width();
+		rectangle.bottom = sz.Height();
+		hr = ConvertBitmapSource( rectangle, pToRenderBitmapSource );
+		}
 	// Step 4: Create a DIB from the converted IWICBitmapSource
 	if( SUCCEEDED( hr ) )
 		hr = UserImageFactory_CreateDIBSectionFromBitmapSource( pToRenderBitmapSource, hRetVal );
