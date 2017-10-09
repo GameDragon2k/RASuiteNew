@@ -769,7 +769,7 @@ API HMENU CCONV _RA_CreatePopupMenu()
 		AppendMenu( hRA, MF_STRING, IDM_RA_REPORTBROKENACHIEVEMENTS, TEXT("&Report Broken Achievements") );
 		AppendMenu( hRA, MF_STRING, IDM_RA_GETROMCHECKSUM, TEXT("Get ROM &Checksum") );
 		AppendMenu( hRA, MF_STRING, IDM_RA_SCANFORGAMES, TEXT("&Scan for games") );
-		AppendMenu( hRA, MF_STRING, IDM_RA_TOGGLELEADERBOARDS, TEXT("Toggle &Leaderboards") );
+		AppendMenu( hRA, g_bLeaderboardsActive ? MF_CHECKED : MF_UNCHECKED, IDM_RA_TOGGLELEADERBOARDS, TEXT("Toggle &Leaderboards") );
 	}
 	else
 	{
@@ -879,34 +879,8 @@ API void CCONV _RA_LoadPreferences()
 
 		sprintf_s( sWelcomeMessage, 4096, 
 			"Welcome! It looks like this is your first time using RetroAchievements.\n\n"
-			"Quick Start: Press ESCAPE or 'Back' on your Xbox 360 controller to view the achievement overlay.\n\n" );
+			"Quick Start: Press ESCAPE or 'Back' on your emulator to view the achievement overlay.\n\n" );
 
-		switch( g_EmulatorID )
-		{
-		case RA_Gens:
-			strcat_s( sWelcomeMessage, 4096,
-				"Default Keyboard Controls: Use cursor keys, A-S-D are A, B, C, and Return for Start.\n\n" );
-			break;
-		case RA_VisualboyAdvance:
-			strcat_s( sWelcomeMessage, 4096,
-				"Default Keyboard Controls: Use cursor keys, Z-X are A and B, A-S are L and R, use Return for Start and Backspace for Select.\n\n" );
-			break;
-		case RA_Snes9x:
-			strcat_s( sWelcomeMessage, 4096,
-				"Default Keyboard Controls: Use cursor keys, D-C-S-X are A, B, X, Y, Z-V are L and R, use Return for Start and Space for Select.\n\n" );
-			break;
-		case RA_FCEUX:
-			strcat_s( sWelcomeMessage, 4096,
-				"Default Keyboard Controls: Use cursor keys, D-F are B and A, use Return for Start and S for Select.\n\n" );
-			break;
-		case RA_PCE:
-			strcat_s( sWelcomeMessage, 4096,
-				"Default Keyboard Controls: Use cursor keys, A-S-D for A, B, C, and Return for Start\n\n" );
-			break;
-		}
-
-		strcat_s( sWelcomeMessage, 4096, "These defaults can be changed under [Option]->[Joypads].\n\n"
-			"If you have any questions, comments or feedback, please visit forum.RetroAchievements.org for more information.\n\n" );
 
 		MessageBox( g_RAMainWnd, 
 			sWelcomeMessage,
@@ -1179,15 +1153,17 @@ API void CCONV _RA_InvokeDialog( LPARAM nID )
 
 		case IDM_RA_GETROMCHECKSUM:
 			{
-				if( CoreAchievements->GameID() == 0)
-				{
-					MessageBox( NULL, "No ROM loaded!", "Error", MB_OK );
-				}
-				else
+				
+				if( g_LocalUser.m_bIsLoggedIn)
 				{	char buffer[2048];
 					sprintf_s( buffer, "Current ROM MD5: %s", g_sCurrentROMMD5 );
 				
 					MessageBox( NULL, buffer, "Get ROM Checksum", MB_OK );
+
+				}
+				else
+				{
+					MessageBox(NULL, "No ROM loaded!", "Error", MB_OK);
 				}
 			}
 			break;
@@ -1286,6 +1262,8 @@ API void CCONV _RA_InvokeDialog( LPARAM nID )
 		case IDM_RA_TOGGLELEADERBOARDS:
 			if( g_bLeaderboardsActive )
 			{
+
+			
 				g_bLeaderboardsActive = false;
 				MessageBox( NULL, "Leaderboards are now disabled", "Warning", MB_OK );
 			}
