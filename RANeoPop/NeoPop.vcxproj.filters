@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="NeoPop %28Core%29">
+      <UniqueIdentifier>{bdf6e382-095c-4f86-ae0f-2b20e349ae02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeoPop %28Core%29\Core">
+      <UniqueIdentifier>{ecf9cd3b-eecb-4a5f-8232-0ffa263b10c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeoPop %28Core%29\TLCS-900h">
+      <UniqueIdentifier>{8b86c599-9b19-4bb6-94c4-15eec4fb1a71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeoPop %28Core%29\TLCS-900h %28Headers%29">
+      <UniqueIdentifier>{df762c6e-d522-4257-9941-ea37ddc0f00e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeoPop %28Core%29\z80">
+      <UniqueIdentifier>{2a221a63-e015-44dc-a02a-633b8fab0f85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System_Win32">
+      <UniqueIdentifier>{586aeae5-ee17-4bad-b6d9-d45f842ec710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System_Win32\Debugger">
+      <UniqueIdentifier>{62a86e25-b6ce-4265-a234-0d043a43774b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System_Win32\docs">
+      <UniqueIdentifier>{e2437ad6-5896-4cd4-9b46-0f181ba37de2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System_Win32\Resources">
+      <UniqueIdentifier>{a110d6fc-ebca-4b27-b21c-c1454944a8b7}</UniqueIdentifier>
+      <Extensions>ico</Extensions>
+    </Filter>
+    <Filter Include="System_Win32\zLIB">
+      <UniqueIdentifier>{24b9ddb3-7e1d-4e1b-92c6-14ff5102dd8b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\bios.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\biosHLE.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\dma.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\flash.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\gfx.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\gfx_scanline_colour.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\gfx_scanline_mono.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\interrupt.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\mem.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\rom.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\sound.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\state.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Z80_interface.c">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_disassemble.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_disassemble_dst.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_disassemble_extra.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_disassemble_reg.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_disassemble_src.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_interpret.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_interpret_dst.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_interpret_reg.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_interpret_single.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_interpret_src.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TLCS-900h\TLCS900h_registers.c">
+      <Filter>NeoPop %28Core%29\TLCS-900h</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\z80\dasm.c">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\z80\Z80.c">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\neopop.c">
+      <Filter>NeoPop %28Core%29</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\Debugger\debug_breakpoint.c">
+      <Filter>System_Win32\Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\Debugger\debug_codeview.c">
+      <Filter>System_Win32\Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\Debugger\debug_memview.c">
+      <Filter>System_Win32\Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\Debugger\debug_regview.c">
+      <Filter>System_Win32\Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\Debugger\debug_watch.c">
+      <Filter>System_Win32\Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\Debugger\debug_z80regview.c">
+      <Filter>System_Win32\Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\Debugger\system_debug.c">
+      <Filter>System_Win32\Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\adler32.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\crc32.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\infblock.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\infcodes.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\inffast.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\inflate.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\inftrees.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\infutil.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\unzip.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\zLIB\zutil.c">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_comms.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_config.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_graphics.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_input.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_input_dialog.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_io.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_language.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_rom.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_sound.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\RA_Implementation.cpp">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\system_main.c">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Win32\Overlay.cpp">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RA_Integration\RA_Interface.cpp">
+      <Filter>System_Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\bios.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\dma.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\flash.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\gfx.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\interrupt.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\mem.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\sound.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\state.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Z80_interface.h">
+      <Filter>NeoPop %28Core%29\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_disassemble.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_interpret.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_interpret_dst.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_interpret_reg.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_interpret_single.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_interpret_src.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapB.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeB0.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeB1.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeB2.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeB3.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeL0.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeL1.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeL2.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeL3.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeW0.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeW1.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeW2.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapCodeW3.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapL.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TLCS-900h\TLCS900h_registers_mapW.h">
+      <Filter>NeoPop %28Core%29\TLCS-900h %28Headers%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\z80\Codes.h">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\z80\CodesCB.h">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\z80\CodesED.h">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\z80\CodesXCB.h">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\z80\CodesXX.h">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\z80\Tables.h">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\z80\Z80.h">
+      <Filter>NeoPop %28Core%29\z80</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\neopop.h">
+      <Filter>NeoPop %28Core%29</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\Debugger\system_debug.h">
+      <Filter>System_Win32\Debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\resource.h">
+      <Filter>System_Win32\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\infblock.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\infcodes.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\inffast.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\inffixed.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\inftrees.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\infutil.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\unzip.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\zconf.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\zlib.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\zLIB\zutil.h">
+      <Filter>System_Win32\zLIB</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\system_comms.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\system_config.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\system_graphics.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\system_input.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\system_language.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\system_main.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\system_rom.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\system_sound.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\RA_Implementation.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Win32\Overlay.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RA_Integration\RA_Interface.h">
+      <Filter>System_Win32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Core\Docs\changelog.txt">
+      <Filter>NeoPop %28Core%29</Filter>
+    </Text>
+    <Text Include="Core\Docs\Memory Map.txt">
+      <Filter>NeoPop %28Core%29</Filter>
+    </Text>
+    <Text Include="Core\Docs\source-readme.txt">
+      <Filter>NeoPop %28Core%29</Filter>
+    </Text>
+    <Text Include="Core\Docs\todo.txt">
+      <Filter>NeoPop %28Core%29</Filter>
+    </Text>
+    <Text Include="System_Win32\Docs\changelog.txt">
+      <Filter>System_Win32\docs</Filter>
+    </Text>
+    <Text Include="System_Win32\docs\NeoPop DirectSound.txt">
+      <Filter>System_Win32\docs</Filter>
+    </Text>
+    <Text Include="System_Win32\Docs\todo.txt">
+      <Filter>System_Win32\docs</Filter>
+    </Text>
+    <Text Include="License.txt" />
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="System_Win32\Go.ico">
+      <Filter>System_Win32\Resources</Filter>
+    </Image>
+    <Image Include="System_Win32\icon.ico">
+      <Filter>System_Win32\Resources</Filter>
+    </Image>
+    <Image Include="System_Win32\neopop.bmp">
+      <Filter>System_Win32\Resources</Filter>
+    </Image>
+    <Image Include="System_Win32\stop.ico">
+      <Filter>System_Win32\Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="System_Win32\Resource.rc">
+      <Filter>System_Win32\Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="bugs.html" />
+  </ItemGroup>
+</Project>
