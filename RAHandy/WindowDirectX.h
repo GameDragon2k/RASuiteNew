@@ -31,10 +31,12 @@
 #include <afxcmn.h>
 #include <afxdlgs.h>
 #include <mmsystem.h>
+#include "System.h"
 #include "machine.h"
 #include "directx.h"
 #include "pixblend.h"
 #include "lynxrender.h"
+#include "Overlay.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // Full Screen Management object
@@ -44,6 +46,7 @@ class CWindowDirectX : public CLynxRender
     private:
         IDirectDraw2Ptr       mIDD;     
         IDirectDrawSurfacePtr mPrimarySurface;
+		IDirectDrawSurfacePtr mAchievementSurface;
         IDirectDrawSurfacePtr mBackSurface;
 		IDirectDrawClipperPtr mWindowClipper;
 
@@ -87,6 +90,14 @@ class CWindowDirectX : public CLynxRender
 				primaryDesc.dwFlags = DDSD_CAPS;
 				primaryDesc.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE;
 				hr = mIDD->CreateSurface (&primaryDesc, &mPrimarySurface, NULL);
+				
+				// -- create achievement surface (same as back buffer) --
+				DXStruct<DDSURFACEDESC> achDesc;
+				achDesc.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH;
+				achDesc.dwWidth = mWidth;
+				achDesc.dwHeight = mHeight;
+				achDesc.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_SYSTEMMEMORY;
+				hr = mIDD->CreateSurface(&achDesc, &mAchievementSurface, NULL);
 
 				// Create clipper and attach
 				hr = mIDD->CreateClipper(0,&mWindowClipper,NULL);
@@ -141,6 +152,7 @@ class CWindowDirectX : public CLynxRender
 				// Now we can release surfaces
 				if(mWindowClipper!=NULL) mWindowClipper.Release();
 				if(mBackSurface!=NULL)	mBackSurface.Release();
+				if (mAchievementSurface != NULL) mAchievementSurface.Release();
 				if(mPrimarySurface!=NULL) mPrimarySurface.Release();
 			}
 			mInitOK=false;
@@ -150,36 +162,52 @@ class CWindowDirectX : public CLynxRender
 
 		bool Render(int dest_x,int dest_y)
 		{
+			HDC hdc;
+			int res;
 			bool retval=TRUE;
 			_hresult hr;
 
-			if(!mInitOK) return FALSE;
+			if(!mInitOK) 
+				return FALSE;
 	
 			hr=mBackSurface->Unlock(NULL);
 
 			// Calculate where the destination rectangle should land and
 			// how large it should be
-			CRect rect(dest_x,dest_y,dest_x+mWidth,dest_y+mHeight);
+			CRect rect(dest_x, dest_y, dest_x + mWidth, dest_y + mHeight);
+			CRect srect(0, 0, HANDY_SCREEN_WIDTH, HANDY_SCREEN_HEIGHT);
 			(AfxGetMainWnd())->ClientToScreen(&rect);
 
-			while(1)
+			if (true)
 			{
-				// Make the primary buffer do the blit & stretch to the screen
-				int res=mPrimarySurface->Blt(&rect,mBackSurface,NULL,0,NULL);
+				// Draw to achievement DD Surface first.
+				res = mAchievementSurface->Blt(NULL, mBackSurface, &srect, DDBLT_ASYNC, 0);
 
-				if(res==DD_OK)
+				if (res == DD_OK)
 				{
-					break;
-				}
-				else if(res==DDERR_SURFACELOST)
-				{
-					// Restore the lost surface
-					mPrimarySurface->Restore();	
+					mAchievementSurface->GetDC(&hdc);
+					RenderAchievementsOverlay(hdc, rect);
+					mAchievementSurface->ReleaseDC(hdc);
+
+					// Make the primary buffer do the blit & stretch to the screen
+					res = mPrimarySurface->Blt(&rect, mAchievementSurface, NULL, DDBLT_WAIT | DDBLT_ASYNC, 0);
+
+					if (res == DD_OK)
+					{
+						//break;
+					}
+					else if (res == DDERR_SURFACELOST)
+					{
+						// Restore the lost surface
+						mPrimarySurface->Restore();
+					}
+					else
+					{
+						retval = FALSE;
+					}
 				}
 				else
-				{
-					retval=FALSE;
-				}
+					retval = FALSE;
 			}
 
 			DXStruct<DDSURFACEDESC> backDesc;	

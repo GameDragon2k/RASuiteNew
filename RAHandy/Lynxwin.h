@@ -65,6 +65,8 @@
 #include "netobj.h"
 #include "debugger.h"
 
+#include "../RA_Integration/RA_Interface.h"
+
 #ifdef TRACE_LYNXWIN
 
 #define TRACE_LYNXWIN0(msg)					_RPT1(_CRT_WARN,"CLynxWin::"msg" (Time=%012d)\n",gSystemCycleCount)
@@ -114,6 +116,9 @@
 #define DISPLAY_X2					0x0002
 #define	DISPLAY_X3					0x0003
 #define	DISPLAY_X4					0x0004
+#define DISPLAY_X5					0x0005
+#define DISPLAY_X6					0x0006
+#define DISPLAY_X7					0x0007
 
 #define DISPLAY_ROTATE_DEFAULT		0x0000
 #define	DISPLAY_NO_ROTATE			0x0000
@@ -146,7 +151,7 @@ public:
 	ULONG		DisplayModeSet(ULONG mode);
 	ULONG		DisplayModeBkgnd(void) {return (mDisplayMode&DISPLAY_BKGND_MASK);}
 	ULONG		DisplayModeRotate(void) {return (mDisplayMode&DISPLAY_ROTATE_MASK);}
-	ULONG		DisplayModeMagnification(void) {if (mDisplayRender==NULL) return 1; else return mDisplayRender->mZoom;}
+	ULONG		DisplayModeMagnification(void) {if (mDisplayRender==NULL) return 4; else return mDisplayRender->mZoom;}
 
 	ULONG		DisplayModeRender(void) {return (mDisplayMode&DISPLAY_RENDER_MASK);}
 	ULONG		DisplayModeWindowed(void) {if (mDisplayRender==NULL) return TRUE; else return mDisplayRender->Windowed();}
@@ -155,7 +160,7 @@ public:
 
 	inline void UpdateWindows(void)
 	{
-			OnPaint();
+			//OnPaint();
 			OnDebuggerUpdate();
 	}
 
@@ -173,6 +178,13 @@ public:
 		//
 		// Throttling code
 		//
+		//
+
+
+
+		//if(gSystemHalt)
+			OnPaint();
+
 		if(gSystemCycleCount>gThrottleNextCycleCheckpoint)
 		{
 			static int limiter=0;
@@ -398,9 +410,10 @@ public:
 
 	BOOL		mInitOK;
 	BOOL		mWindowInFocus;
-
 };
 
+extern ULONG gInputData;
+extern BOOL gIsFullscreen;
 
 /////////////////////////////////////////////////////////////////////////////
 

@@ -201,7 +201,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
 		FILE	*fp;
 
 		// Open the cartridge file for reading
-		if((fp=fopen(gamefile,"rb"))==NULL)
+		if((fp=fopen(romfile,"rb"))==NULL)
 		{
 			fprintf(stderr, "Invalid Cart.\n");
 
@@ -337,8 +337,6 @@ CSystem::CSystem(char* gamefile,char* romfile)
 // but what the hell, who cares, I don't.....
 
 	Reset();
-
-	RA_OnLoadNewRom(mCart->GetData(), ROM_SIZE, mRam->GetRamPointer(), RAM_SIZE, NULL, 0);
 
 
 // If this is a snapshot type then restore the context

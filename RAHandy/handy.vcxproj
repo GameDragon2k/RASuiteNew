@@ -71,24 +71,28 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Dbg|Win32'">
-    <OutDir>.\Release_Dbg\</OutDir>
-    <IntDir>.\Release_Dbg\</IntDir>
+    <OutDir>$(ProjectDir)\Release_Dbg\</OutDir>
+    <IntDir>$(ProjectDir)\Release_Dbg\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>RAHandy_release_dbg</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>$(ProjectDir)\Debug\</OutDir>
+    <IntDir>$(ProjectDir)\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>RAHandy_debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dbg|Win32'">
-    <OutDir>.\Debug_Dbg\</OutDir>
-    <IntDir>.\Debug_Dbg\</IntDir>
+    <OutDir>$(ProjectDir)\Debug_Dbg\</OutDir>
+    <IntDir>$(ProjectDir)\Debug_Dbg\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>RAHandy_debug_dbg</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Configuration)</OutDir>
     <IntDir>$(SolutionDir)$(Configuration)</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>RAHandy</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Dbg|Win32'">
     <ClCompile>
@@ -125,7 +129,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>nafxcw.lib libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <OutputFile>Release_Dbg/handybug.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalDependencies>nafxcw.lib;libcmt.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -169,8 +173,8 @@
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>Nafxcwd.lib;Libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>.\Debug\LynxSystem.exe</OutputFile>
-      <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;winhttp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dbg|Win32'">
@@ -213,7 +217,7 @@
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>Nafxcwd.lib Libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>Debug_Dbg/handybug.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -272,6 +276,8 @@
     <ClCompile Include="ErrorHandler.cpp" />
     <ClCompile Include="gfxwin.cpp" />
     <ClCompile Include="HexEdit.cpp" />
+    <ClCompile Include="IniReader.cpp" />
+    <ClCompile Include="IniWriter.cpp" />
     <ClCompile Include="keydefs.cpp" />
     <ClCompile Include="Lynxapp.cpp" />
     <ClCompile Include="Lynxwin.cpp" />
@@ -328,6 +334,8 @@
     <ClInclude Include="fullscreenlcd.h" />
     <ClInclude Include="gfxwin.h" />
     <ClInclude Include="HexEdit.h" />
+    <ClInclude Include="IniReader.h" />
+    <ClInclude Include="IniWriter.h" />
     <ClInclude Include="keydefs.h" />
     <ClInclude Include="Lynxapp.h" />
     <ClInclude Include="lynxbase.h" />

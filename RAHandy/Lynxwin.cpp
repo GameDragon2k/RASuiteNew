@@ -51,6 +51,8 @@
 #include "debugger.h"
 #include "Overlay.h"
 
+#include "IniWriter.h"
+#include "IniReader.h"
 #include "../RA_Integration/RA_Interface.h"
 #include "../RA_Integration/RA_Resource.h"
 
@@ -67,6 +69,11 @@ static char THIS_FILE[] = __FILE__;
 #define REGISTRY_VERSION	"Version 1.0"
 
 #define TRACE_LYNXWIN
+
+ULONG gInputData;
+BOOL gIsFullscreen;
+CIniWriter iniWriter(".\\config.ini");
+CIniReader iniReader(".\\config.ini");
 
 /////////////////////////////////////////////////////////////////////////////
 // CLynxWindown
@@ -115,13 +122,17 @@ CLynxWindow::CLynxWindow(CString gamefile)
 
 	CRect rect=rectDefault;
 
-	rect.left=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"MainWindowX1", rectDefault.left);
-	rect.top=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"MainWindowY1", rectDefault.top);
+	rect.left = iniReader.ReadInteger("WindowSettings", "MainWindowX1", rectDefault.left);
+	rect.top = iniReader.ReadInteger("WindowSettings", "MainWindowY1", rectDefault.top);
+	//rect.left=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"MainWindowX1", rectDefault.left);
+	//rect.top=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"MainWindowY1", rectDefault.top);
 
 	// If less than 50 pixels is onscreen in any axis then reset screen coords
 	if(rect.left<0 || rect.right<0 || (rect.left+50)>GetSystemMetrics(SM_CXSCREEN) || (rect.top+50)>GetSystemMetrics(SM_CYSCREEN))
 	{
-		rect.left=0; rect.top=0;
+		int xPos = (GetSystemMetrics(SM_CXSCREEN) / 2) - (HANDY_SCREEN_WIDTH * DISPLAY_X4);
+		int yPos = (GetSystemMetrics(SM_CYSCREEN) / 2) - (HANDY_SCREEN_HEIGHT * DISPLAY_X4);
+		rect.left = xPos; rect.top = yPos;
 	}
 	
 	// Create our window OVERLAPPEDWINDOW - THICKFRAME (No resize)
@@ -133,7 +144,8 @@ CLynxWindow::CLynxWindow(CString gamefile)
 	mInfoDialogEnable=0;
 	mInfoDialog.Create(IDD_INFO_BOX,this);
 	mInfoDialog.ShowWindow(SW_HIDE);
-	if(mpLynxApp->GetProfileInt(REGISTRY_VERSION,"InfoDialogEnable",FALSE)) OnInfoSelect();
+	if (iniReader.ReadInteger("InfoDialog", "InfoDialogEnable", FALSE)) OnInfoSelect();
+	//if(mpLynxApp->GetProfileInt(REGISTRY_VERSION,"InfoDialogEnable",FALSE)) OnInfoSelect();
 	gThrottleMaxPercentage=100;
 	CSpinButtonCtrl& ctlspeed=*(CSpinButtonCtrl*)mInfoDialog.GetDlgItem(IDC_STATUS_SPIN1);
 	ctlspeed.SetRange(1,500);
@@ -147,35 +159,6 @@ CLynxWindow::CLynxWindow(CString gamefile)
 	gSingleStepModeSprites=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DebugSpriteStep",FALSE);
 #else
 	GetMenu()->RemoveMenu(2,MF_BYPOSITION);
-
-	HMENU hRA = CreatePopupMenu();
-
-	AppendMenu(hRA, MF_STRING, IDM_RA_FILES_LOGOUT, TEXT("Log&out"));
-	AppendMenu(hRA, MF_SEPARATOR, NULL, NULL);
-	AppendMenu(hRA, MF_STRING, IDM_RA_OPENUSERPAGE, TEXT("Open my &User Page"));
-
-	UINT nGameFlags = MF_STRING;
-	//if( g_pActiveAchievements->GameID() == 0 )	//	Disabled til I can get this right: Snes9x doesn't call this?
-	//	nGameFlags |= (MF_GRAYED|MF_DISABLED);
-
-	AppendMenu(hRA, nGameFlags, IDM_RA_OPENGAMEPAGE, TEXT("Open this &Game's Page"));
-	AppendMenu(hRA, MF_SEPARATOR, NULL, NULL);
-	AppendMenu(hRA, mHardcoreActive ? MF_CHECKED: MF_UNCHECKED, IDM_RA_HARDCORE_MODE, TEXT("&Hardcore Mode"));
-	AppendMenu(hRA, MF_SEPARATOR, NULL, NULL);
-	AppendMenu(hRA, MF_STRING, IDM_RA_FILES_ACHIEVEMENTS, TEXT("Achievement &Sets"));
-	AppendMenu(hRA, MF_STRING, IDM_RA_FILES_ACHIEVEMENTEDITOR, TEXT("Achievement &Editor"));
-	AppendMenu(hRA, MF_STRING, IDM_RA_FILES_MEMORYFINDER, TEXT("&Memory Inspector"));
-	AppendMenu(hRA, MF_STRING, IDM_RA_PARSERICHPRESENCE, TEXT("&Parse Rich Presence script"));
-	AppendMenu(hRA, MF_SEPARATOR, NULL, NULL);
-	AppendMenu(hRA, MF_STRING, IDM_RA_REPORTBROKENACHIEVEMENTS, TEXT("&Report Broken Achievements"));
-	AppendMenu(hRA, MF_STRING, IDM_RA_GETROMCHECKSUM, TEXT("Get ROM &Checksum"));
-	AppendMenu(hRA, MF_STRING, IDM_RA_SCANFORGAMES, TEXT("&Scan for games"));
-	//	##RA embed RA
-	AppendMenu(GetMenu()->m_hMenu, MF_POPUP | MF_STRING, (UINT_PTR)hRA, TEXT("&RetroAchievements"));
-
-
-
-	//AppendMenu(GetMenu()->m_hMenu, MF_POPUP | MF_STRING, (UINT_PTR)RA_CreatePopupMenu(), TEXT("&RetroAchievements"));
 	DrawMenuBar();
 #endif
 
@@ -210,10 +193,14 @@ CLynxWindow::CLynxWindow(CString gamefile)
 //
 // Set the video mode, create device contexts
 //
-	ULONG render=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeRender",DISPLAY_WINDOWED)&DISPLAY_RENDER_MASK;
-	ULONG magnify=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeMagnification",DISPLAY_X4)&DISPLAY_X_MASK;
-	ULONG rotate=DISPLAY_NO_ROTATE;
-	ULONG bkgnd=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeBackground",DISPLAY_NO_BKGND);
+	ULONG render = iniReader.ReadInteger("DisplayMode", "DisplayModeRender", DISPLAY_WINDOWED)&DISPLAY_RENDER_MASK;
+	ULONG magnify = iniReader.ReadInteger("DisplayMode", "DisplayModeMagnification", DISPLAY_X4)&DISPLAY_X_MASK;
+	ULONG rotate = DISPLAY_NO_ROTATE;
+	ULONG bkgnd = iniReader.ReadInteger("DisplayMode", "DisplayModeBackground", DISPLAY_NO_BKGND);
+	//ULONG render=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeRender",DISPLAY_WINDOWED)&DISPLAY_RENDER_MASK;
+	//ULONG magnify=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeMagnification",DISPLAY_X4)&DISPLAY_X_MASK;
+	//ULONG rotate=DISPLAY_NO_ROTATE;
+	//ULONG bkgnd=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"DisplayModeBackground",DISPLAY_NO_BKGND);
 	//if(mpLynx->CartGetRotate()==CART_ROTATE_LEFT) rotate=DISPLAY_ROTATE_LEFT;
 	//if(mpLynx->CartGetRotate()==CART_ROTATE_RIGHT) rotate=DISPLAY_ROTATE_RIGHT;
 // Allow boot into fullscreen -	
@@ -231,15 +218,27 @@ CLynxWindow::CLynxWindow(CString gamefile)
 	// Create a sound object
 
 	mDirectSoundPlayer.Create(this,gAudioBuffer,&gAudioBufferPointer,HANDY_AUDIO_BUFFER_SIZE,HANDY_AUDIO_SAMPLE_FREQ);
-	if(mpLynxApp->GetProfileInt(REGISTRY_VERSION,"AudioEnabled",FALSE)) gAudioEnabled=mDirectSoundPlayer.Start();
+	if (iniReader.ReadInteger("AudioSettings", "AudioEnabled", FALSE)) gAudioEnabled = mDirectSoundPlayer.Start();
+	//if(mpLynxApp->GetProfileInt(REGISTRY_VERSION,"AudioEnabled",FALSE)) gAudioEnabled=mDirectSoundPlayer.Start();
 
 	// Enable the joystick if required
 
 	mJoystickEnable=FALSE;
-	if(mpLynxApp->GetProfileInt(REGISTRY_VERSION,"JoystickEnabled",FALSE)) OnJoystickMenuSelect();
+	if (iniReader.ReadInteger("JoystickSettings", "JoystickEnabled", FALSE)) OnJoystickMenuSelect();
+	//if(mpLynxApp->GetProfileInt(REGISTRY_VERSION,"JoystickEnabled",FALSE)) OnJoystickMenuSelect();
 
 	// Read in the key definitions
-	mKeyDefs.key_up=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_UP",VK_UP);
+	mKeyDefs.key_up		= iniReader.ReadInteger("KeyBinds", "KeyDefs_UP", VK_UP);
+	mKeyDefs.key_down	= iniReader.ReadInteger("KeyBinds", "KeyDefs_DOWN", VK_DOWN);
+	mKeyDefs.key_left	= iniReader.ReadInteger("KeyBinds", "KeyDefs_LEFT", VK_LEFT);
+	mKeyDefs.key_right	= iniReader.ReadInteger("KeyBinds", "KeyDefs_RIGHT", VK_RIGHT);
+	mKeyDefs.key_a		= iniReader.ReadInteger("KeyBinds", "KeyDefs_A", VK_X);
+	mKeyDefs.key_b		= iniReader.ReadInteger("KeyBinds", "KeyDefs_B", VK_Z);
+	mKeyDefs.key_opt1	= iniReader.ReadInteger("KeyBinds", "KeyDefs_OPT1", VK_A);
+	mKeyDefs.key_opt2	= iniReader.ReadInteger("KeyBinds", "KeyDefs_OPT2", VK_S);
+	mKeyDefs.key_pause	= iniReader.ReadInteger("KeyBinds", "KeyDefs_PAUSE", VK_RETURN);
+
+	/*mKeyDefs.key_up=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_UP",VK_UP);
 	mKeyDefs.key_down=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_DOWN",VK_DOWN);
 	mKeyDefs.key_left=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_LEFT",VK_LEFT);
 	mKeyDefs.key_right=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_RIGHT",VK_RIGHT);
@@ -247,7 +246,7 @@ CLynxWindow::CLynxWindow(CString gamefile)
 	mKeyDefs.key_b=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_B",VK_Z);
 	mKeyDefs.key_opt1=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_OPT1",VK_1);
 	mKeyDefs.key_opt2=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_OPT2",VK_2);
-	mKeyDefs.key_pause=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_PAUSE",VK_Q);
+	mKeyDefs.key_pause=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"KeyDefs_PAUSE",VK_Q);*/
 
 	mInitOK=TRUE;
 	mDisplayNoPainting=FALSE;
@@ -262,6 +261,7 @@ CLynxWindow::~CLynxWindow()
 
 BOOL CLynxWindow::DestroyWindow() 
 {
+	RA_Shutdown();
 
 	// If we have a net link up then destroy it
 	if(mpNetLynx)
@@ -280,7 +280,35 @@ BOOL CLynxWindow::DestroyWindow()
 		CRect rect;
 		GetWindowRect(&rect);
 
-		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"MainWindowX1", rect.left);
+		iniWriter.WriteInteger("WindowSettings", "MainWindowX1", rect.left);
+		iniWriter.WriteInteger("WindowSettings", "MainWindowY1", rect.top);
+
+		iniWriter.WriteInteger("AudioSettings", "AudioEnabled", (int)mDirectSoundPlayer.GetStatus());
+		iniWriter.WriteInteger("JoystickSettings", "JoystickEnabled", (mJoystickEnable) ? 1 : 0);
+
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_UP", mKeyDefs.key_up);
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_DOWN", mKeyDefs.key_down);
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_LEFT", mKeyDefs.key_left);
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_RIGHT", mKeyDefs.key_right);
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_A", mKeyDefs.key_a);
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_B", mKeyDefs.key_b);
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_OPT1", mKeyDefs.key_opt1);
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_OPT2", mKeyDefs.key_opt2);
+		iniWriter.WriteInteger("KeyBinds", "KeyDefs_PAUSE", mKeyDefs.key_pause);
+
+		iniWriter.WriteInteger("DisplayMode", "DisplayModeMagnification", DisplayModeMagnification());
+		iniWriter.WriteInteger("DisplayMode", "DisplayModeBackground", DisplayModeBkgnd());
+		iniWriter.WriteInteger("DisplayMode", "DisplayBackgroundType", mDisplayBackgroundType);
+		iniWriter.WriteInteger("DisplayMode", "DisplayModeRender", DisplayModeRender());
+
+		iniWriter.WriteInteger("InfoDialog", "InfoDialogEnable", (mInfoDialogEnable) ? 1 : 0);
+
+		mInfoDialog.GetWindowRect(&rect);
+		iniWriter.WriteInteger("InfoDialog", "InfoWindowX1", rect.left);
+		iniWriter.WriteInteger("InfoDialog", "InfoWindowY1", rect.top);
+
+
+		/*mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"MainWindowX1", rect.left);
 		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"MainWindowY1", rect.top);
 
 		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"AudioEnabled",(int)mDirectSoundPlayer.GetStatus());
@@ -305,11 +333,9 @@ BOOL CLynxWindow::DestroyWindow()
 
 		mInfoDialog.GetWindowRect(&rect);
 		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"InfoWindowX1", rect.left);
-		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"InfoWindowY1", rect.top);
+		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"InfoWindowY1", rect.top);*/
 	}
 
-
-	EndOverlay();
 
 	// Destroy the previous renderer
 	if(mDisplayRender!=NULL)
@@ -432,7 +458,8 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 	// First thing is to locate a Lynxboot image, see if the registry has one
 
 	CString romfile=mRootPath+"lynxboot.img";
-	romfile=mpLynxApp->GetProfileString(REGISTRY_VERSION,"BootImageFilename",romfile);
+	romfile = iniReader.ReadString("FileSettings", "BootImageFilename", romfile);
+	//romfile=mpLynxApp->GetProfileString(REGISTRY_VERSION,"BootImageFilename",romfile);
 
 	// Try to open it, if not then fail over to message then file dialog
 
@@ -455,8 +482,12 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 		romfile=dlg.GetPathName();
 
 		// Save the rom image path to the registry
-		mpLynxApp->WriteProfileString(REGISTRY_VERSION,"BootImageFilename",romfile);
+		//mpLynxApp->WriteProfileString(REGISTRY_VERSION,"BootImageFilename",romfile);
 
+		// Save the rom image path to ini
+		char* sTemp = romfile.GetBuffer();
+		iniWriter.WriteString("FileSettings", "BootImageFilename", sTemp);
+		romfile.ReleaseBuffer();
 
 	}
 	else
@@ -483,7 +514,8 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 				if (newsystem == NULL)
 				{
 				CString filter="Handy Filetypes (*.lnx*)|*.lnx|All Files (*.*)|*.*||";
-				gamefile=mpLynxApp->GetProfileString(REGISTRY_VERSION,"DefaultGameFile","");
+				gamefile = iniReader.ReadString("FileSettings", "DefaultGameFile", "");
+				//gamefile=mpLynxApp->GetProfileString(REGISTRY_VERSION,"DefaultGameFile","");
 				// Check if gamefile exists if so then load, else dialog
 				CFileDialog	dlg(TRUE,"lnx",gamefile,OFN_PATHMUSTEXIST|OFN_FILEMUSTEXIST|OFN_HIDEREADONLY,filter,NULL);
 				// Retrieve file from dialog
@@ -496,7 +528,10 @@ CSystem* CLynxWindow::CreateLynx(CString gamefile)
 				else
 				{
 					gamefile=dlg.GetPathName();
-					mpLynxApp->WriteProfileString(REGISTRY_VERSION,"DefaultGameFile",gamefile);
+					char* sTemp = gamefile.GetBuffer();
+					iniWriter.WriteString("FileSettings", "DefaultGameFile", sTemp);
+					gamefile.ReleaseBuffer();
+					//mpLynxApp->WriteProfileString(REGISTRY_VERSION,"DefaultGameFile",gamefile);
 
 
 					// Create the system object
@@ -809,12 +844,12 @@ ULONG CLynxWindow::DisplayModeSet(ULONG render,ULONG background,ULONG magnificat
 	{
 		magnification=DisplayModeMagnification();
 	}
-	else if(magnification!=DISPLAY_X1 && magnification!=DISPLAY_X2 && magnification!=DISPLAY_X3 && magnification!=DISPLAY_X4)
+	else if(magnification<DISPLAY_X1 && magnification>DISPLAY_X7)
 	{
 		magnification=DISPLAY_X_DEFAULT;
 	}
 	// Background is only available for x1 & x2, x3
-	if(magnification==DISPLAY_X4) background=DISPLAY_NO_BKGND;
+	if(magnification>=DISPLAY_X4) background=DISPLAY_NO_BKGND;
 
 	//
 	// Handle Rotation issues
@@ -884,6 +919,8 @@ UBYTE* CLynxWindow::DisplayCallback(ULONG objref)
 		// A screen update is required so lets get on with it
 		lwin->mFrameCount++;
 		lwin->OnPaint();
+		RA_DoAchievementsFrame();
+		RA_HandleHTTPResults();
 	}
 
 #ifdef _LYNXDBG
@@ -938,7 +975,7 @@ BEGIN_MESSAGE_MAP(CLynxWindow, CFrameWnd)
 	ON_COMMAND(IDM_FILE_SNAPSHOT_BMP, OnFileSnapshotBMP)
 	ON_COMMAND(IDM_FILE_SNAPSHOT_RAW, OnFileSnapshotRAW)
 	ON_COMMAND(IDM_ESCAPE_FULLSCREEN, OnDisplayEscapeFullScreen)
-	ON_COMMAND(IDM_OPTIONS_DISPLAY_FULLSCN, OnDisplayToggleFullScreen)
+	//ON_COMMAND(IDM_OPTIONS_DISPLAY_FULLSCN, OnDisplayToggleFullScreen)
 	
 	ON_WM_PAINT()
 	ON_WM_TIMER()
@@ -958,6 +995,11 @@ BEGIN_MESSAGE_MAP(CLynxWindow, CFrameWnd)
 	ON_UPDATE_COMMAND_UI_RANGE(IDM_OPTIONS_ROTATE_LEFT,IDM_OPTIONS_ROTATE_RIGHT,OnDisplayRotateUpdate)
 	ON_COMMAND_RANGE(IDM_OPTIONS_BACKGROUNDTYPE1,IDM_OPTIONS_BACKGROUNDTYPE3,OnDisplayBackgroundTypeSelect)
 	ON_UPDATE_COMMAND_UI_RANGE(IDM_OPTIONS_BACKGROUNDTYPE1,IDM_OPTIONS_BACKGROUNDTYPE3,OnDisplayBackgroundTypeUpdate)
+
+	// Zoom Additions
+	ON_COMMAND_RANGE(IDM_OPTIONS_SIZE_QUIN, IDM_OPTIONS_SIZE_SEPT, OnDisplayZoomSelect)
+	ON_UPDATE_COMMAND_UI_RANGE(IDM_OPTIONS_SIZE_QUIN, IDM_OPTIONS_SIZE_SEPT, OnDisplayZoomUpdate)
+
 END_MESSAGE_MAP()
 
 
@@ -970,22 +1012,8 @@ inline void CLynxWindow::OnPaint()
 	CPaintDC dc (this);
 //	BeginPaint(NULL);
 
-
-	ControllerInput input;
-	input.m_bLeftPressed = mKeyDefs.key_left;
-	input.m_bRightPressed = mKeyDefs.key_right;
-	input.m_bDownPressed = mKeyDefs.key_down;
-	input.m_bUpPressed = mKeyDefs.key_up;
-	input.m_bConfirmPressed = mKeyDefs.key_a;
-	input.m_bCancelPressed = mKeyDefs.key_b;
-	input.m_bQuitPressed = mKeyDefs.key_pause;
-
-	RenderAchievementsOverlay(this->m_hWnd, gSystemHalt, input);
-	
-
-	RA_DoAchievementsFrame();
-
-	RA_HandleHTTPResults();
+	gInputData = mpLynx->GetButtonData();
+	gIsFullscreen = (DisplayModeRender() == DISPLAY_FULLSCREEN);
 
 	// Dont attempt to paint if the Lynx object is not constructed, this
 	// can happen on return from full screen with Ctrl-O to open a new file
@@ -998,7 +1026,6 @@ inline void CLynxWindow::OnPaint()
 	{
 
 		mDisplayRender->Render(mDisplayOffsetX, mDisplayOffsetY);
-
 
 		
 	}
@@ -1304,10 +1331,15 @@ void CLynxWindow::OnNetworkMenuSelect()
 		else
 		{
 			TRACE_LYNXWIN0("OnNetworkMenuSelect() - CNetObj InActive - Calling START");
-			if(mpNetLynx->Start(mpLynxApp->GetProfileString(REGISTRY_VERSION,"NetLynxAddress",""))==TRUE)
+			//if(mpNetLynx->Start(mpLynxApp->GetProfileString(REGISTRY_VERSION,"NetLynxAddress",""))==TRUE)
+			if(mpNetLynx->Start(iniReader.ReadString("Network", "NetLynxAddress", "")) == TRUE)
 			{
 				TRACE_LYNXWIN0("OnNetworkMenuSelect() - CNetObj Start suceeded");
-				mpLynxApp->WriteProfileString(REGISTRY_VERSION,"NetLynxAddress",mpNetLynx->mNetAddress);
+				char* sTemp = new char[mpNetLynx->mNetAddress.GetLength() + 1];
+				strcpy(sTemp, mpNetLynx->mNetAddress);
+				iniWriter.WriteString("Network", "NetLynxAddress", sTemp);
+				//mpNetLynx->mNetAddress.ReleaseBuffer();
+				//mpLynxApp->WriteProfileString(REGISTRY_VERSION,"NetLynxAddress",mpNetLynx->mNetAddress);
 				// Fix the state of the Lynx
 				mpLynx->ComLynxCable(TRUE);
 				mpLynx->ComLynxTxCallback(NetworkTxCallback,(ULONG)this);
@@ -1365,6 +1397,9 @@ void CLynxWindow::OnFileLoad()
 	}
 	else
 	{
+		if (mpLynx->mCart->CRC32() != 0 )
+			RA_OnLoadNewRom(mpLynx->mCart->GetData(), ROM_SIZE, mpLynx->mRam->GetRamPointer(), RAM_SIZE, NULL, 0);
+
 		// Now the object has been sucessfully recreated then we must re-initialise
 		// the graphics subsystem, while we're doing it we can set the mode level
 		// up accordingly.
@@ -1804,17 +1839,13 @@ void CLynxWindow::OnPauseMenuSelect()
 	{
 		gBreakpointHit=TRUE;	// This will force a window redraw in the debug version
 		gSystemHalt=TRUE;		// This will stop the system
-
-		RA_SetPaused(TRUE);
-
 	}
 	else
 	{
 		gSystemHalt=FALSE;		// Make sure we run always
 		gSingleStepMode=FALSE;	// Go for it....
-
-		RA_SetPaused(FALSE);
 	}
+	RA_SetPaused(gSystemHalt);
 	OnDebuggerUpdate();
 	Invalidate(FALSE);
 }
@@ -1930,19 +1961,19 @@ void CLynxWindow::OnDisplayModeSelect(UINT nID)
 			mode=DISPLAY_WINDOWED;
 			break;
 		case IDM_OPTIONS_DISPLAY_MODE_2:
-			mode=DISPLAY_FULLSCREEN;
+			//mode=DISPLAY_FULLSCREEN;
 			break;
 		case IDM_OPTIONS_DISPLAY_MODE_3:
 			mode=DISPLAY_LYNXLCD_WINDOWED;
 			break;
 		case IDM_OPTIONS_DISPLAY_MODE_4:
-			mode=DISPLAY_LYNXLCD_FULLSCREEN;
+			//mode=DISPLAY_LYNXLCD_FULLSCREEN;
 			break;
 		case IDM_OPTIONS_DISPLAY_MODE_5:
 			mode=DISPLAY_EAGLE_WINDOWED;
 			break;
 		case IDM_OPTIONS_DISPLAY_MODE_6:
-			mode=DISPLAY_EAGLE_FULLSCREEN;
+			//mode=DISPLAY_EAGLE_FULLSCREEN;
 			break;
 		case IDM_OPTIONS_DISPLAY_MODE_7:
 			mode=DISPLAY_GDI_WINDOWED;
@@ -2059,6 +2090,15 @@ void CLynxWindow::OnDisplayZoomSelect(UINT nID)
 {
 	switch(nID)
 	{
+		case IDM_OPTIONS_SIZE_SEPT:
+			DisplayModeSet(DISPLAY_PRESERVE, DISPLAY_PRESERVE, DISPLAY_X7, DISPLAY_PRESERVE);
+			break;
+		case IDM_OPTIONS_SIZE_HEX:
+			DisplayModeSet(DISPLAY_PRESERVE, DISPLAY_PRESERVE, DISPLAY_X6, DISPLAY_PRESERVE);
+			break;
+		case IDM_OPTIONS_SIZE_QUIN:
+			DisplayModeSet(DISPLAY_PRESERVE, DISPLAY_PRESERVE, DISPLAY_X5, DISPLAY_PRESERVE);
+			break;
 		case IDM_OPTIONS_SIZE_QUAD:
 			DisplayModeSet(DISPLAY_PRESERVE,DISPLAY_PRESERVE,DISPLAY_X4,DISPLAY_PRESERVE);
 			break;
@@ -2080,6 +2120,15 @@ void CLynxWindow::OnDisplayZoomUpdate(CCmdUI *pCmdUI)
 	ULONG check;
 	switch(pCmdUI->m_nID)
 	{
+		case IDM_OPTIONS_SIZE_SEPT:
+			check = DISPLAY_X7;
+			break;
+		case IDM_OPTIONS_SIZE_HEX:
+			check = DISPLAY_X6;
+			break;
+		case IDM_OPTIONS_SIZE_QUIN:
+			check = DISPLAY_X5;
+			break;
 		case IDM_OPTIONS_SIZE_QUAD:
 			check=DISPLAY_X4;
 			break;
@@ -2231,8 +2280,10 @@ void CLynxWindow::OnInfoSelect()
 		CRect rect;
 		GetWindowRect(&rect);
 
-		int xpos=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"InfoWindowX1",rect.right+4);
-		int ypos=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"InfoWindowY1",rect.top);
+		int xpos = iniReader.ReadInteger("InfoDialog", "InfoWindowX1", rect.right + 4);
+		int ypos = iniReader.ReadInteger("InfoDialog", "InfoWindowY1", rect.top);
+		//int xpos=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"InfoWindowX1",rect.right+4);
+		//int ypos=mpLynxApp->GetProfileInt(REGISTRY_VERSION,"InfoWindowY1",rect.top);
 
 		mInfoDialog.SetWindowPos(&wndTop,xpos,ypos,0,0,SWP_NOSIZE);
 
@@ -2243,8 +2294,10 @@ void CLynxWindow::OnInfoSelect()
 	{
 		CRect rect;
 		mInfoDialog.GetWindowRect(&rect);
-		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"InfoWindowX1", rect.left);
-		mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"InfoWindowY1", rect.top);
+		iniWriter.WriteInteger("InfoDialog", "InfoWindowX1", rect.left);
+		iniWriter.WriteInteger("InfoDialog", "InfoWindowY1", rect.top);
+		//mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"InfoWindowX1", rect.left);
+		//mpLynxApp->WriteProfileInt(REGISTRY_VERSION,"InfoWindowY1", rect.top);
 
 		KillTimer(mInfoDialogEnable);
 		mInfoDialogEnable=0;

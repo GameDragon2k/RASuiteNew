@@ -46,17 +46,20 @@ BEGIN
         MENUITEM "Key &definitions...",         IDM_OPTIONS_KEYDEFS
         MENUITEM SEPARATOR
         MENUITEM "Normal Mode (Windowed)",      IDM_OPTIONS_DISPLAY_MODE_1
-        MENUITEM "&Normal Mode (Full Screen)",  IDM_OPTIONS_DISPLAY_MODE_2
+        //MENUITEM "&Normal Mode (Full Screen)",  IDM_OPTIONS_DISPLAY_MODE_2
         MENUITEM "Lynx LCD Emulation (Windowed)", IDM_OPTIONS_DISPLAY_MODE_3
-        MENUITEM "Lynx LCD Emulation (Full Screen)", IDM_OPTIONS_DISPLAY_MODE_4
+        //MENUITEM "Lynx LCD Emulation (Full Screen)", IDM_OPTIONS_DISPLAY_MODE_4
         MENUITEM "Eagle Mode (Windowed)",       IDM_OPTIONS_DISPLAY_MODE_5
-        MENUITEM "Eagle Mode (Full Screen)",    IDM_OPTIONS_DISPLAY_MODE_6
+        //MENUITEM "Eagle Mode (Full Screen)",    IDM_OPTIONS_DISPLAY_MODE_6
         MENUITEM "GDI Mode (Windowed - SLOW)",  IDM_OPTIONS_DISPLAY_MODE_7
         MENUITEM SEPARATOR
         MENUITEM "&1x Screen Zoom",             IDM_OPTIONS_SIZE_NORMAL
         MENUITEM "&2x Screen Zoom",             IDM_OPTIONS_SIZE_DOUBLE
         MENUITEM "&3x Screen Zoom",             IDM_OPTIONS_SIZE_TRIPLE
         MENUITEM "&4x Screen Zoom",             IDM_OPTIONS_SIZE_QUAD
+		MENUITEM "&5x Screen Zoom",				IDM_OPTIONS_SIZE_QUIN
+		MENUITEM "&6x Screen Zoom",				IDM_OPTIONS_SIZE_HEX
+		MENUITEM "&7x Screen Zoom",				IDM_OPTIONS_SIZE_SEPT
         MENUITEM SEPARATOR
         MENUITEM "&Reset\tF3",                  IDM_OPTIONS_RESET
         MENUITEM "&Pause\tF5",                  IDM_OPTIONS_PAUSE
@@ -94,8 +97,11 @@ BEGIN
         MENUITEM "&2x Screen Zoom",             IDM_OPTIONS_SIZE_DOUBLE
         MENUITEM "&3x Screen Zoom",             IDM_OPTIONS_SIZE_TRIPLE
         MENUITEM "&4x Screen Zoom",             IDM_OPTIONS_SIZE_QUAD
-        MENUITEM SEPARATOR
-        MENUITEM "&Full Screen Mode\tAlt+Enter", IDM_OPTIONS_FULL_SCREEN
+		MENUITEM "&5x Screen Zoom",				IDM_OPTIONS_SIZE_QUIN
+		MENUITEM "&6x Screen Zoom",				IDM_OPTIONS_SIZE_HEX
+		MENUITEM "&7x Screen Zoom",				IDM_OPTIONS_SIZE_SEPT
+        //MENUITEM SEPARATOR
+        //MENUITEM "&Full Screen Mode\tAlt+Enter", IDM_OPTIONS_FULL_SCREEN
         MENUITEM SEPARATOR
         MENUITEM "&Reset\tF3",                  IDM_OPTIONS_RESET
         MENUITEM SEPARATOR
@@ -497,6 +503,9 @@ STRINGTABLE
 BEGIN
     IDM_OPTIONS_SIZE_TRIPLE "Triple Lynx screen size"
     IDM_OPTIONS_SIZE_QUAD   "Quadruple Lynx screen size"
+	IDM_OPTIONS_SIZE_QUIN	"Quintuple Lynx screen size"
+	IDM_OPTIONS_SIZE_HEX	"Hextuple Lynx screen size"
+	IDM_OPTIONS_SIZE_SEPT	"Septuple Lynx screen size"
     IDM_OPTIONS_ROTATE_LEFT "Rotate Lynx Screen (Left)"
     IDM_OPTIONS_ROTATE_RIGHT "Rotate Lynx Screen (Right)"
     IDM_OPTIONS_FULL_SCREEN "Full screen mode"

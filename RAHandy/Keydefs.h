@@ -51,6 +51,8 @@
 #define VK_Z	'Z'
 #define VK_X	'X'
 #define VK_Q	'Q'
+#define VK_A	'A'
+#define VK_S	'S'
 
 
 class CKeyDefs : public CDialog

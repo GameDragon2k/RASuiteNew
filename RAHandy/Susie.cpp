@@ -460,6 +460,9 @@ void CSusie::DoMathDivide(void)
 
 ULONG CSusie::PaintSprites(void)
 {
+	// This line disables drawing on the "Insert Game" screen. Kind of obnoxious.
+	if(mSystem.mCart->CRC32() == 0) return 0;
+
 	int	sprcount=0;
 	int data=0;
 	int everonscreen=0;

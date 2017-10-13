@@ -1,3 +1,4 @@
+#include "lynxwin.h"
 #include "RA_Implementation.h"
 #include "../RA_Integration/RA_Resource.h"
 #include "../RA_Integration/RA_Interface.h"
@@ -7,23 +8,22 @@
 //#include "../Common.h"
 
 // returns -1 if not found
-//int GetMenuItemIndex(HMENU hMenu, const char* ItemName)
-//{
-//	int index = 0;
-//	char buf[256];
-//
-//	while(index < GetMenuItemCount(hMenu))
-//	{
-//		if(GetMenuString(hMenu, index, buf, sizeof(buf)-1, MF_BYPOSITION))
-//		{
-//			if(!strcmp(ItemName, buf))
-//				return index;
-//		}
-//		index++;
-//	}
-//	return -1;
-//}
+int GetMenuItemIndex(HMENU hMenu, const char* ItemName)
+{
+	int index = 0;
+	char buf[256];
 
+	while (index < GetMenuItemCount(hMenu))
+	{
+		if (GetMenuString(hMenu, index, buf, sizeof(buf) - 1, MF_BYPOSITION))
+		{
+			if (!strcmp(ItemName, buf))
+				return index;
+		}
+		index++;
+	}
+	return -1;
+}
 
 //	Return whether a game has been loaded. Should return FALSE if
 //	 no ROM is loaded, or a ROM has been unloaded.
@@ -35,13 +35,27 @@ bool GameIsActive()
 //	Perform whatever action is required to unpause emulation.
 void CauseUnpause()
 {
-	//FCEUI_SetEmulationPaused( false );
+	gSystemHalt = false;
 }
 
 //	Perform whatever function in the case of needing to rebuild the menu.
 void RebuildMenu()
 {
+	// get main menu handle
+	HMENU hMainMenu = GetMenu((AfxGetMainWnd())->m_hWnd);
+	if (!hMainMenu) return;
 
+	// get file menu index
+	int index = GetMenuItemIndex(hMainMenu, "&RetroAchievements");
+	if (index >= 0)
+		DeleteMenu(hMainMenu, index, MF_BYPOSITION);
+
+	//	##RA embed RA
+	AppendMenu(hMainMenu, MF_POPUP | MF_STRING, (UINT_PTR)RA_CreatePopupMenu(), TEXT("&RetroAchievements"));
+
+	InvalidateRect((AfxGetMainWnd())->m_hWnd, NULL, TRUE);
+
+	DrawMenuBar((AfxGetMainWnd())->m_hWnd);
 }
 
 //	sNameOut points to a 64 character buffer.
@@ -55,14 +69,10 @@ void GetEstimatedGameTitle( char* sNameOut )
 
 void ResetEmulation()
 {
-
-
-
 }
 
 void LoadRom( char* path)
 {
-	//FCEUI_ResetNES();
 }
 
 //	Installs these shared functions into the DLL

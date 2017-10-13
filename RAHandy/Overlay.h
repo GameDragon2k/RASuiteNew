@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Lynxwin.h"
 #include <ddraw.h>
 
 #include "../RA_Integration/RA_Interface.h"
@@ -11,9 +12,7 @@
 extern "C" {
 #endif
 
-extern void EndOverlay();
-extern void RenderAchievementsOverlay(HWND hwnd, BOOL paused, ControllerInput input);
-extern bool disable_RA_overlay;
+extern void RenderAchievementsOverlay(HDC hdc, RECT rect);
 
 #ifdef __cplusplus
 }

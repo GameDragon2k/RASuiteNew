@@ -147,6 +147,9 @@
 #define IDM_FILE_SNAPSHOT_LOAD          40053
 #define IDM_DEBUG_DEBUGGER              40055
 #define IDM_EDITLINE_INPUTWAITING       40056
+#define IDM_OPTIONS_SIZE_QUIN			40057
+#define IDM_OPTIONS_SIZE_HEX			40058
+#define IDM_OPTIONS_SIZE_SEPT			40059
 
 // Next default values for new objects
 // 

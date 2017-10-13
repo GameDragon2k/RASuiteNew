@@ -88,11 +88,13 @@ BOOL CLynxApplication::InitInstance()
 	m_pMainWnd->ShowWindow(m_nCmdShow);
 	m_pMainWnd->UpdateWindow();
 
-	RA_Init(pWnd->m_hWnd, RA_ATARI, "0.020");
+	RA_Init(pWnd->m_hWnd, RA_ATARI, "0.021");
 
 	RA_InitShared();
 
+	RebuildMenu();
 	RA_AttemptLogin();
+	RebuildMenu();
 
 	RA_HandleHTTPResults();
 
