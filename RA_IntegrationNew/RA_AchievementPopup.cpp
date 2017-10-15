@@ -1,3 +1,4 @@
+#include <tchar.h>
 #include "RA_AchievementPopup.h"
 
 #include "RA_Achievement.h"

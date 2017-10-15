@@ -1,0 +1,136 @@
+diff --git a/RAHandy/System.cpp b/RAHandy/System.cpp
+index 46a6f50..7a42a0f 100644
+--- a/RAHandy/System.cpp
++++ b/RAHandy/System.cpp
+@@ -201,7 +201,7 @@ CSystem::CSystem(char* gamefile,char* romfile)
+ 		FILE	*fp;
+ 
+ 		// Open the cartridge file for reading
+-		if((fp=fopen(gamefile,"rb"))==NULL)
++		if((fp=fopen(romfile,"rb"))==NULL)
+ 		{
+ 			fprintf(stderr, "Invalid Cart.\n");
+ 
+diff --git a/RAHandy/handy.vcxproj b/RAHandy/handy.vcxproj
+index 53dd609..1f91c93 100644
+--- a/RAHandy/handy.vcxproj
++++ b/RAHandy/handy.vcxproj
+@@ -71,24 +71,28 @@
+   </ImportGroup>
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Dbg|Win32'">
+-    <OutDir>.\Release_Dbg\</OutDir>
+-    <IntDir>.\Release_Dbg\</IntDir>
++    <OutDir>$(ProjectDir)\Release_Dbg\</OutDir>
++    <IntDir>$(ProjectDir)\Release_Dbg\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
++    <TargetName>RAHandy_release_dbg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+-    <OutDir>.\Debug\</OutDir>
+-    <IntDir>.\Debug\</IntDir>
++    <OutDir>$(ProjectDir)\Debug\</OutDir>
++    <IntDir>$(ProjectDir)\Debug\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
++    <TargetName>RAHandy_debug</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dbg|Win32'">
+-    <OutDir>.\Debug_Dbg\</OutDir>
+-    <IntDir>.\Debug_Dbg\</IntDir>
++    <OutDir>$(ProjectDir)\Debug_Dbg\</OutDir>
++    <IntDir>$(ProjectDir)\Debug_Dbg\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
++    <TargetName>RAHandy_debug_dbg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+     <OutDir>$(SolutionDir)$(Configuration)</OutDir>
+     <IntDir>$(SolutionDir)$(Configuration)</IntDir>
+     <LinkIncremental>false</LinkIncremental>
++    <TargetName>RAHandy</TargetName>
+   </PropertyGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Dbg|Win32'">
+     <ClCompile>
+@@ -125,7 +129,7 @@
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <SubSystem>Windows</SubSystem>
+       <IgnoreSpecificDefaultLibraries>nafxcw.lib libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+-      <OutputFile>Release_Dbg/handybug.exe</OutputFile>
++      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+       <AdditionalDependencies>nafxcw.lib;libcmt.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+@@ -169,8 +173,8 @@
+       <SubSystem>Windows</SubSystem>
+       <IgnoreSpecificDefaultLibraries>Nafxcwd.lib;Libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+-      <OutputFile>.\Debug\LynxSystem.exe</OutputFile>
+-      <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
++      <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;winhttp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dbg|Win32'">
+@@ -213,7 +217,7 @@
+       <SubSystem>Windows</SubSystem>
+       <IgnoreSpecificDefaultLibraries>Nafxcwd.lib Libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+-      <OutputFile>Debug_Dbg/handybug.exe</OutputFile>
++      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+       <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+diff --git a/RA_IntegrationNew/RA_AchievementPopup.cpp b/RA_IntegrationNew/RA_AchievementPopup.cpp
+index 62ae84d..9c2141d 100644
+--- a/RA_IntegrationNew/RA_AchievementPopup.cpp
++++ b/RA_IntegrationNew/RA_AchievementPopup.cpp
+@@ -1,3 +1,4 @@
++#include <tchar.h>
+ #include "RA_AchievementPopup.h"
+ 
+ #include "RA_Achievement.h"
+diff --git a/RA_IntegrationNew/RA_BuildVer.h b/RA_IntegrationNew/RA_BuildVer.h
+index a5aaa5e..30f851d 100644
+--- a/RA_IntegrationNew/RA_BuildVer.h
++++ b/RA_IntegrationNew/RA_BuildVer.h
+@@ -1 +1 @@
+-#define RA_INTEGRATION_VERSION "0.999" 
++#define RA_INTEGRATION_VERSION "0.~14,3" 
+diff --git a/RA_IntegrationNew/RA_CodeNotes.cpp b/RA_IntegrationNew/RA_CodeNotes.cpp
+index 7273269..3bea8ca 100644
+--- a/RA_IntegrationNew/RA_CodeNotes.cpp
++++ b/RA_IntegrationNew/RA_CodeNotes.cpp
+@@ -1,3 +1,4 @@
++#include <tchar.h>
+ #include "RA_CodeNotes.h"
+ 
+ #include <Windows.h>
+diff --git a/RA_IntegrationNew/RA_Integration.vcxproj b/RA_IntegrationNew/RA_Integration.vcxproj
+index 753c53a..9555f85 100644
+--- a/RA_IntegrationNew/RA_Integration.vcxproj
++++ b/RA_IntegrationNew/RA_Integration.vcxproj
+@@ -19,14 +19,14 @@
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v140</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>Unicode</CharacterSet>
+-    <PlatformToolset>v100</PlatformToolset>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+@@ -67,7 +67,7 @@
+     </ClCompile>
+     <Link>
+       <AdditionalDependencies>windowscodecs.lib;winmm.lib;Winhttp.lib;ddraw.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>..\DXSDK_March09_x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>..\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+       <SubSystem>Windows</SubSystem>

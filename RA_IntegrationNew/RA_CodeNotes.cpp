@@ -1,3 +1,4 @@
+#include <tchar.h>
 #include "RA_CodeNotes.h"
 
 #include <Windows.h>

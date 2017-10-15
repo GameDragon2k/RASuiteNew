@@ -106,6 +106,13 @@ CSystem::CSystem(char* gamefile,char* romfile)
 	ULONG filesize=0;
 	ULONG howardsize=0;
 
+	const char* ext = strrchr(gamefile, '.');
+	char ext_buf[4];
+	ext++; ext_buf[0] = (*ext);
+	ext++; ext_buf[1] = (*ext);
+	ext++; ext_buf[2] = (*ext);
+	ext_buf[3] = 0;
+
 	mFileType=HANDY_FILETYPE_LNX;
 	if(strcmp(gamefile,"")==0)
 	{
@@ -194,6 +201,30 @@ CSystem::CSystem(char* gamefile,char* romfile)
 		{
 			
 		}
+	}
+	else if (memcmp(ext_buf, "lnx",3) == 0)
+	{
+		// Open the file and load the file
+		FILE	*fp;
+
+		// Open the cartridge file for reading
+		if ((fp = fopen(gamefile, "rb")) == NULL)
+		{
+			fprintf(stderr, "Invalid Cart.\n");
+		}
+
+		// How big is the file ??
+		fseek(fp, 0, SEEK_END);
+		filesize = ftell(fp);
+		fseek(fp, 0, SEEK_SET);
+		filememory = (UBYTE*) new UBYTE[filesize];
+
+		if (fread(filememory, sizeof(char), filesize, fp) != filesize)
+		{
+			delete filememory;
+		}
+
+		fclose(fp);
 	}
 	else
 	{

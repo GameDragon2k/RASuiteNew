@@ -1,0 +1,6 @@
+﻿E:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1189,5): warning MSB8012: TargetPath(M:\Covers\RAHandy\RASuiteNew\Release\RA_Integration.dll) does not match the Linker's OutputFile property value (M:\Covers\RAHandy\RASuiteNew\RA_Integration\RA_Integration.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+E:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1193,5): warning MSB8030: The linker switch "Minimum Required Version" requires "SubSystem" to be set.  Without "SubSystem", the "Minimum Required Version" would not be passed to linker and could prevent to the output binary from running on older Operating Systems.
+  LINK : program database M:\Covers\RAHandy\RASuiteNew\Release\RA_Integration.pdb missing; performing full link
+     Creating library M:\Covers\RAHandy\RASuiteNew\Release\RA_Integration.lib and object M:\Covers\RAHandy\RASuiteNew\Release\RA_Integration.exp
+  RA_Integration.vcxproj -> M:\Covers\RAHandy\RASuiteNew\Release\RA_Integration.dll
+  RA_Integration.vcxproj -> M:\Covers\RAHandy\RASuiteNew\Release\RA_Integration.pdb (Full PDB)

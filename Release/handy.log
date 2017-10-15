@@ -1,0 +1,301 @@
+﻿E:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(367,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+E:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  System.cpp
+m:\covers\rahandy\rasuitenew\rahandy\c65c02.h(1765): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(130): warning C4005: 'NO_ERROR': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(39): note: see previous definition of 'NO_ERROR'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(140): warning C4005: 'ERROR_INVALID_FUNCTION': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(40): note: see previous definition of 'ERROR_INVALID_FUNCTION'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(149): warning C4005: 'ERROR_FILE_NOT_FOUND': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(41): note: see previous definition of 'ERROR_FILE_NOT_FOUND'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(158): warning C4005: 'ERROR_PATH_NOT_FOUND': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(42): note: see previous definition of 'ERROR_PATH_NOT_FOUND'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(167): warning C4005: 'ERROR_TOO_MANY_OPEN_FILES': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(43): note: see previous definition of 'ERROR_TOO_MANY_OPEN_FILES'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(176): warning C4005: 'ERROR_ACCESS_DENIED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(44): note: see previous definition of 'ERROR_ACCESS_DENIED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(185): warning C4005: 'ERROR_INVALID_HANDLE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(45): note: see previous definition of 'ERROR_INVALID_HANDLE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(194): warning C4005: 'ERROR_ARENA_TRASHED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(46): note: see previous definition of 'ERROR_ARENA_TRASHED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(203): warning C4005: 'ERROR_NOT_ENOUGH_MEMORY': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(47): note: see previous definition of 'ERROR_NOT_ENOUGH_MEMORY'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(212): warning C4005: 'ERROR_INVALID_BLOCK': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(48): note: see previous definition of 'ERROR_INVALID_BLOCK'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(221): warning C4005: 'ERROR_BAD_ENVIRONMENT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(49): note: see previous definition of 'ERROR_BAD_ENVIRONMENT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(230): warning C4005: 'ERROR_BAD_FORMAT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(50): note: see previous definition of 'ERROR_BAD_FORMAT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(239): warning C4005: 'ERROR_INVALID_ACCESS': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(51): note: see previous definition of 'ERROR_INVALID_ACCESS'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(248): warning C4005: 'ERROR_INVALID_DATA': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(52): note: see previous definition of 'ERROR_INVALID_DATA'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(266): warning C4005: 'ERROR_INVALID_DRIVE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(54): note: see previous definition of 'ERROR_INVALID_DRIVE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(275): warning C4005: 'ERROR_CURRENT_DIRECTORY': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(55): note: see previous definition of 'ERROR_CURRENT_DIRECTORY'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(284): warning C4005: 'ERROR_NOT_SAME_DEVICE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(56): note: see previous definition of 'ERROR_NOT_SAME_DEVICE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(293): warning C4005: 'ERROR_NO_MORE_FILES': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(57): note: see previous definition of 'ERROR_NO_MORE_FILES'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(302): warning C4005: 'ERROR_WRITE_PROTECT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(61): note: see previous definition of 'ERROR_WRITE_PROTECT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(311): warning C4005: 'ERROR_BAD_UNIT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(62): note: see previous definition of 'ERROR_BAD_UNIT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(320): warning C4005: 'ERROR_NOT_READY': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(63): note: see previous definition of 'ERROR_NOT_READY'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(329): warning C4005: 'ERROR_BAD_COMMAND': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(64): note: see previous definition of 'ERROR_BAD_COMMAND'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(338): warning C4005: 'ERROR_CRC': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(65): note: see previous definition of 'ERROR_CRC'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(347): warning C4005: 'ERROR_BAD_LENGTH': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(66): note: see previous definition of 'ERROR_BAD_LENGTH'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(356): warning C4005: 'ERROR_SEEK': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(67): note: see previous definition of 'ERROR_SEEK'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(365): warning C4005: 'ERROR_NOT_DOS_DISK': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(68): note: see previous definition of 'ERROR_NOT_DOS_DISK'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(374): warning C4005: 'ERROR_SECTOR_NOT_FOUND': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(69): note: see previous definition of 'ERROR_SECTOR_NOT_FOUND'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(383): warning C4005: 'ERROR_OUT_OF_PAPER': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(70): note: see previous definition of 'ERROR_OUT_OF_PAPER'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(392): warning C4005: 'ERROR_WRITE_FAULT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(71): note: see previous definition of 'ERROR_WRITE_FAULT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(401): warning C4005: 'ERROR_READ_FAULT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(72): note: see previous definition of 'ERROR_READ_FAULT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(410): warning C4005: 'ERROR_GEN_FAILURE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(73): note: see previous definition of 'ERROR_GEN_FAILURE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(419): warning C4005: 'ERROR_SHARING_VIOLATION': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(77): note: see previous definition of 'ERROR_SHARING_VIOLATION'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(428): warning C4005: 'ERROR_LOCK_VIOLATION': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(78): note: see previous definition of 'ERROR_LOCK_VIOLATION'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(438): warning C4005: 'ERROR_WRONG_DISK': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(79): note: see previous definition of 'ERROR_WRONG_DISK'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(447): warning C4005: 'ERROR_SHARING_BUFFER_EXCEEDED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(81): note: see previous definition of 'ERROR_SHARING_BUFFER_EXCEEDED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(474): warning C4005: 'ERROR_NOT_SUPPORTED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(85): note: see previous definition of 'ERROR_NOT_SUPPORTED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(681): warning C4005: 'ERROR_FILE_EXISTS': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(89): note: see previous definition of 'ERROR_FILE_EXISTS'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(690): warning C4005: 'ERROR_CANNOT_MAKE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(91): note: see previous definition of 'ERROR_CANNOT_MAKE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(699): warning C4005: 'ERROR_FAIL_I24': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(92): note: see previous definition of 'ERROR_FAIL_I24'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(708): warning C4005: 'ERROR_OUT_OF_STRUCTURES': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(96): note: see previous definition of 'ERROR_OUT_OF_STRUCTURES'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(717): warning C4005: 'ERROR_ALREADY_ASSIGNED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(97): note: see previous definition of 'ERROR_ALREADY_ASSIGNED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(726): warning C4005: 'ERROR_INVALID_PASSWORD': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(98): note: see previous definition of 'ERROR_INVALID_PASSWORD'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(735): warning C4005: 'ERROR_INVALID_PARAMETER': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(99): note: see previous definition of 'ERROR_INVALID_PARAMETER'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(744): warning C4005: 'ERROR_NET_WRITE_FAULT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(100): note: see previous definition of 'ERROR_NET_WRITE_FAULT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(753): warning C4005: 'ERROR_NO_PROC_SLOTS': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(104): note: see previous definition of 'ERROR_NO_PROC_SLOTS'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(762): warning C4005: 'ERROR_TOO_MANY_SEMAPHORES': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(111): note: see previous definition of 'ERROR_TOO_MANY_SEMAPHORES'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(771): warning C4005: 'ERROR_EXCL_SEM_ALREADY_OWNED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(112): note: see previous definition of 'ERROR_EXCL_SEM_ALREADY_OWNED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(780): warning C4005: 'ERROR_SEM_IS_SET': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(113): note: see previous definition of 'ERROR_SEM_IS_SET'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(789): warning C4005: 'ERROR_TOO_MANY_SEM_REQUESTS': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(114): note: see previous definition of 'ERROR_TOO_MANY_SEM_REQUESTS'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(798): warning C4005: 'ERROR_INVALID_AT_INTERRUPT_TIME': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(115): note: see previous definition of 'ERROR_INVALID_AT_INTERRUPT_TIME'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(807): warning C4005: 'ERROR_SEM_OWNER_DIED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(117): note: see previous definition of 'ERROR_SEM_OWNER_DIED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(816): warning C4005: 'ERROR_SEM_USER_LIMIT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(118): note: see previous definition of 'ERROR_SEM_USER_LIMIT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(825): warning C4005: 'ERROR_DISK_CHANGE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(119): note: see previous definition of 'ERROR_DISK_CHANGE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(834): warning C4005: 'ERROR_DRIVE_LOCKED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(120): note: see previous definition of 'ERROR_DRIVE_LOCKED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(843): warning C4005: 'ERROR_BROKEN_PIPE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(121): note: see previous definition of 'ERROR_BROKEN_PIPE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(852): warning C4005: 'ERROR_OPEN_FAILED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(125): note: see previous definition of 'ERROR_OPEN_FAILED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(861): warning C4005: 'ERROR_BUFFER_OVERFLOW': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(127): note: see previous definition of 'ERROR_BUFFER_OVERFLOW'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(870): warning C4005: 'ERROR_DISK_FULL': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(130): note: see previous definition of 'ERROR_DISK_FULL'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(879): warning C4005: 'ERROR_NO_MORE_SEARCH_HANDLES': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(132): note: see previous definition of 'ERROR_NO_MORE_SEARCH_HANDLES'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(888): warning C4005: 'ERROR_INVALID_TARGET_HANDLE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(135): note: see previous definition of 'ERROR_INVALID_TARGET_HANDLE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(897): warning C4005: 'ERROR_INVALID_CATEGORY': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(139): note: see previous definition of 'ERROR_INVALID_CATEGORY'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(906): warning C4005: 'ERROR_INVALID_VERIFY_SWITCH': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(141): note: see previous definition of 'ERROR_INVALID_VERIFY_SWITCH'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(915): warning C4005: 'ERROR_BAD_DRIVER_LEVEL': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(143): note: see previous definition of 'ERROR_BAD_DRIVER_LEVEL'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(924): warning C4005: 'ERROR_CALL_NOT_IMPLEMENTED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(147): note: see previous definition of 'ERROR_CALL_NOT_IMPLEMENTED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(933): warning C4005: 'ERROR_SEM_TIMEOUT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(150): note: see previous definition of 'ERROR_SEM_TIMEOUT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(942): warning C4005: 'ERROR_INSUFFICIENT_BUFFER': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(152): note: see previous definition of 'ERROR_INSUFFICIENT_BUFFER'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(951): warning C4005: 'ERROR_INVALID_NAME': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(162): note: see previous definition of 'ERROR_INVALID_NAME'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(960): warning C4005: 'ERROR_INVALID_LEVEL': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(164): note: see previous definition of 'ERROR_INVALID_LEVEL'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(969): warning C4005: 'ERROR_NO_VOLUME_LABEL': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(166): note: see previous definition of 'ERROR_NO_VOLUME_LABEL'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(978): warning C4005: 'ERROR_MOD_NOT_FOUND': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(168): note: see previous definition of 'ERROR_MOD_NOT_FOUND'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(987): warning C4005: 'ERROR_PROC_NOT_FOUND': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(169): note: see previous definition of 'ERROR_PROC_NOT_FOUND'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(996): warning C4005: 'ERROR_WAIT_NO_CHILDREN': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(171): note: see previous definition of 'ERROR_WAIT_NO_CHILDREN'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1005): warning C4005: 'ERROR_CHILD_NOT_COMPLETE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(173): note: see previous definition of 'ERROR_CHILD_NOT_COMPLETE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1014): warning C4005: 'ERROR_DIRECT_ACCESS_HANDLE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(177): note: see previous definition of 'ERROR_DIRECT_ACCESS_HANDLE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1023): warning C4005: 'ERROR_NEGATIVE_SEEK': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(180): note: see previous definition of 'ERROR_NEGATIVE_SEEK'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1032): warning C4005: 'ERROR_SEEK_ON_DEVICE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(182): note: see previous definition of 'ERROR_SEEK_ON_DEVICE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1041): warning C4005: 'ERROR_IS_JOIN_TARGET': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(187): note: see previous definition of 'ERROR_IS_JOIN_TARGET'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1050): warning C4005: 'ERROR_IS_JOINED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(188): note: see previous definition of 'ERROR_IS_JOINED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1059): warning C4005: 'ERROR_IS_SUBSTED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(189): note: see previous definition of 'ERROR_IS_SUBSTED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1068): warning C4005: 'ERROR_NOT_JOINED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(190): note: see previous definition of 'ERROR_NOT_JOINED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1077): warning C4005: 'ERROR_NOT_SUBSTED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(191): note: see previous definition of 'ERROR_NOT_SUBSTED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1086): warning C4005: 'ERROR_JOIN_TO_JOIN': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(192): note: see previous definition of 'ERROR_JOIN_TO_JOIN'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1095): warning C4005: 'ERROR_SUBST_TO_SUBST': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(193): note: see previous definition of 'ERROR_SUBST_TO_SUBST'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1104): warning C4005: 'ERROR_JOIN_TO_SUBST': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(194): note: see previous definition of 'ERROR_JOIN_TO_SUBST'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1113): warning C4005: 'ERROR_SUBST_TO_JOIN': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(195): note: see previous definition of 'ERROR_SUBST_TO_JOIN'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1122): warning C4005: 'ERROR_BUSY_DRIVE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(196): note: see previous definition of 'ERROR_BUSY_DRIVE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1131): warning C4005: 'ERROR_SAME_DRIVE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(197): note: see previous definition of 'ERROR_SAME_DRIVE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1140): warning C4005: 'ERROR_DIR_NOT_ROOT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(198): note: see previous definition of 'ERROR_DIR_NOT_ROOT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1149): warning C4005: 'ERROR_DIR_NOT_EMPTY': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(199): note: see previous definition of 'ERROR_DIR_NOT_EMPTY'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1158): warning C4005: 'ERROR_IS_SUBST_PATH': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(200): note: see previous definition of 'ERROR_IS_SUBST_PATH'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1167): warning C4005: 'ERROR_IS_JOIN_PATH': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(201): note: see previous definition of 'ERROR_IS_JOIN_PATH'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1176): warning C4005: 'ERROR_PATH_BUSY': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(202): note: see previous definition of 'ERROR_PATH_BUSY'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1185): warning C4005: 'ERROR_IS_SUBST_TARGET': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(203): note: see previous definition of 'ERROR_IS_SUBST_TARGET'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1194): warning C4005: 'ERROR_SYSTEM_TRACE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(204): note: see previous definition of 'ERROR_SYSTEM_TRACE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1203): warning C4005: 'ERROR_INVALID_EVENT_COUNT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(205): note: see previous definition of 'ERROR_INVALID_EVENT_COUNT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1212): warning C4005: 'ERROR_TOO_MANY_MUXWAITERS': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(206): note: see previous definition of 'ERROR_TOO_MANY_MUXWAITERS'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1221): warning C4005: 'ERROR_INVALID_LIST_FORMAT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(207): note: see previous definition of 'ERROR_INVALID_LIST_FORMAT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1230): warning C4005: 'ERROR_LABEL_TOO_LONG': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(208): note: see previous definition of 'ERROR_LABEL_TOO_LONG'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1239): warning C4005: 'ERROR_TOO_MANY_TCBS': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(209): note: see previous definition of 'ERROR_TOO_MANY_TCBS'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1248): warning C4005: 'ERROR_SIGNAL_REFUSED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(210): note: see previous definition of 'ERROR_SIGNAL_REFUSED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1257): warning C4005: 'ERROR_DISCARDED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(211): note: see previous definition of 'ERROR_DISCARDED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1266): warning C4005: 'ERROR_NOT_LOCKED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(212): note: see previous definition of 'ERROR_NOT_LOCKED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1275): warning C4005: 'ERROR_BAD_THREADID_ADDR': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(213): note: see previous definition of 'ERROR_BAD_THREADID_ADDR'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1284): warning C4005: 'ERROR_BAD_ARGUMENTS': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(214): note: see previous definition of 'ERROR_BAD_ARGUMENTS'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1293): warning C4005: 'ERROR_BAD_PATHNAME': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(215): note: see previous definition of 'ERROR_BAD_PATHNAME'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1302): warning C4005: 'ERROR_SIGNAL_PENDING': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(216): note: see previous definition of 'ERROR_SIGNAL_PENDING'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1311): warning C4005: 'ERROR_MAX_THRDS_REACHED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(218): note: see previous definition of 'ERROR_MAX_THRDS_REACHED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1356): warning C4005: 'ERROR_INVALID_SEGMENT_NUMBER': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(221): note: see previous definition of 'ERROR_INVALID_SEGMENT_NUMBER'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1365): warning C4005: 'ERROR_INVALID_ORDINAL': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(223): note: see previous definition of 'ERROR_INVALID_ORDINAL'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1374): warning C4005: 'ERROR_ALREADY_EXISTS': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(224): note: see previous definition of 'ERROR_ALREADY_EXISTS'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1383): warning C4005: 'ERROR_INVALID_FLAG_NUMBER': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(227): note: see previous definition of 'ERROR_INVALID_FLAG_NUMBER'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1392): warning C4005: 'ERROR_SEM_NOT_FOUND': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(228): note: see previous definition of 'ERROR_SEM_NOT_FOUND'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1401): warning C4005: 'ERROR_INVALID_STARTING_CODESEG': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(234): note: see previous definition of 'ERROR_INVALID_STARTING_CODESEG'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1410): warning C4005: 'ERROR_INVALID_STACKSEG': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(235): note: see previous definition of 'ERROR_INVALID_STACKSEG'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1419): warning C4005: 'ERROR_INVALID_MODULETYPE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(236): note: see previous definition of 'ERROR_INVALID_MODULETYPE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1428): warning C4005: 'ERROR_INVALID_EXE_SIGNATURE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(237): note: see previous definition of 'ERROR_INVALID_EXE_SIGNATURE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1437): warning C4005: 'ERROR_EXE_MARKED_INVALID': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(238): note: see previous definition of 'ERROR_EXE_MARKED_INVALID'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1446): warning C4005: 'ERROR_BAD_EXE_FORMAT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(239): note: see previous definition of 'ERROR_BAD_EXE_FORMAT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1455): warning C4005: 'ERROR_ITERATED_DATA_EXCEEDS_64k': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(240): note: see previous definition of 'ERROR_ITERATED_DATA_EXCEEDS_64k'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1464): warning C4005: 'ERROR_INVALID_MINALLOCSIZE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(241): note: see previous definition of 'ERROR_INVALID_MINALLOCSIZE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1473): warning C4005: 'ERROR_DYNLINK_FROM_INVALID_RING': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(242): note: see previous definition of 'ERROR_DYNLINK_FROM_INVALID_RING'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1482): warning C4005: 'ERROR_IOPL_NOT_ENABLED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(243): note: see previous definition of 'ERROR_IOPL_NOT_ENABLED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1491): warning C4005: 'ERROR_INVALID_SEGDPL': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(244): note: see previous definition of 'ERROR_INVALID_SEGDPL'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1500): warning C4005: 'ERROR_AUTODATASEG_EXCEEDS_64k': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(245): note: see previous definition of 'ERROR_AUTODATASEG_EXCEEDS_64k'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1509): warning C4005: 'ERROR_RING2SEG_MUST_BE_MOVABLE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(246): note: see previous definition of 'ERROR_RING2SEG_MUST_BE_MOVABLE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1518): warning C4005: 'ERROR_RELOC_CHAIN_XEEDS_SEGLIM': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(247): note: see previous definition of 'ERROR_RELOC_CHAIN_XEEDS_SEGLIM'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1527): warning C4005: 'ERROR_INFLOOP_IN_RELOC_CHAIN': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(248): note: see previous definition of 'ERROR_INFLOOP_IN_RELOC_CHAIN'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1536): warning C4005: 'ERROR_ENVVAR_NOT_FOUND': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(250): note: see previous definition of 'ERROR_ENVVAR_NOT_FOUND'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1545): warning C4005: 'ERROR_NO_SIGNAL_SENT': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(252): note: see previous definition of 'ERROR_NO_SIGNAL_SENT'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1554): warning C4005: 'ERROR_FILENAME_EXCED_RANGE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(253): note: see previous definition of 'ERROR_FILENAME_EXCED_RANGE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1563): warning C4005: 'ERROR_RING2_STACK_IN_USE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(254): note: see previous definition of 'ERROR_RING2_STACK_IN_USE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1572): warning C4005: 'ERROR_META_EXPANSION_TOO_LONG': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(255): note: see previous definition of 'ERROR_META_EXPANSION_TOO_LONG'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1581): warning C4005: 'ERROR_INVALID_SIGNAL_NUMBER': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(257): note: see previous definition of 'ERROR_INVALID_SIGNAL_NUMBER'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1590): warning C4005: 'ERROR_THREAD_1_INACTIVE': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(258): note: see previous definition of 'ERROR_THREAD_1_INACTIVE'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1599): warning C4005: 'ERROR_LOCKED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(260): note: see previous definition of 'ERROR_LOCKED'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1608): warning C4005: 'ERROR_TOO_MANY_MODULES': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(262): note: see previous definition of 'ERROR_TOO_MANY_MODULES'
+E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\winerror.h(1617): warning C4005: 'ERROR_NESTING_NOT_ALLOWED': macro redefinition
+  E:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include\error.h(263): note: see previous definition of 'ERROR_NESTING_NOT_ALLOWED'
+System.cpp(304): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+System.cpp(305): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+System.cpp(306): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+System.cpp(211): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+System.cpp(235): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+System.cpp(303): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdlib.h(1096): note: see declaration of '_splitpath'
+System.cpp(309): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+System.cpp(405): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+System.cpp(467): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+System.cpp(616): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  E:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  handy.vcxproj -> M:\Covers\RAHandy\RASuiteNew\Release\RAHandy.exe
+  handy.vcxproj -> M:\Covers\RAHandy\RASuiteNew\Release\RAHandy.pdb (Full PDB)

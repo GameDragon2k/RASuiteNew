@@ -1,0 +1,1 @@
+GameDragon:0x000016:Pause Flag (ff = ON | 00 = OFF)#GameDragon:0x00004e:Batarangs Count#

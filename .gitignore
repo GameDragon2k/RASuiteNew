@@ -3,3 +3,10 @@
 ################################################################################
 
 /.vs/RAHandy
+/RAHandy/.vs/handy
+/RAHandy/Debug
+/RAHandy/Overlay
+/RAHandy/RACache
+/RAHandy/config.ini
+/RAHandy/RA_Integration.dll
+/RAHandy/ra_prefs_RA_ATARI.cfg

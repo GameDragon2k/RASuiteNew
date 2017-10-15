@@ -1,0 +1,128 @@
+_RA_InitI Init called! ID: 13, ClientVer: 0.021
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\New folder\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_LoadPreferences - no preferences found: showing first-time message!
+DoBlockingHttpGet: (00002ba4) GET from RA_Keys.dll...
+DoBlockingHttpGet: (00002ba4) success! Read 7168 bytes...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (000063fc) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (000061e0) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 1976 bytes read
+_RA_InitI Init called! ID: 13, ClientVer: 0.021
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\New folder\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpGet: (00005590) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: POST to requestnews.php Success: 1976 bytes read
+DoBlockingHttpGet: (00005590) success! Read 223 bytes...
+DoBlockingHttpPost: (00004aec) POST to requestlogin.php?u=GameDragon&p=retroarch126...
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (0000575c) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (000055ac) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (000055ac) success! Read 31036 bytes...
+DoBlockingHttpPost: (00004aec) POST to requestpatch.php?u=GameDragon&g=10670&f=3&l=1...
+DoBlockingHttpPost: POST to requestpatch.php Success: 12 bytes read
+CreateHTTPRequestThread requestrichpresence.php
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (00004aec) POST to requestunlocks.php?u=GameDragon&t=O2wwUMHj7DmAszxC&g=10670&h=0...
+DoBlockingHttpPost: (000053c0) POST to requestrichpresence.php?g=10670...
+DoBlockingHttpPost: POST to requestunlocks.php Success: 3 bytes read
+DoBlockingHttpPost: (00004aec) POST to requestpatch.php?u=GameDragon&g=10670&f=5&l=0...
+DoBlockingHttpPost: POST to requestrichpresence.php Success: 0 bytes read
+DoBlockingHttpPost: POST to requestpatch.php Success: 12 bytes read
+DoBlockingHttpPost: (00004aec) POST to requestpatch.php?u=GameDragon&g=10670&f=9&l=0...
+DoBlockingHttpPost: POST to requestpatch.php Success: 12 bytes read
+CreateHTTPRequestThread requestpostactivity.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestcodenotes.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00005530) POST to requestcodenotes.php?g=10670...
+DoBlockingHttpPost: POST to requestcodenotes.php Success: 9 bytes read
+DoBlockingHttpPost: POST to requestpostactivity.php Success: 2 bytes read
+CreateHTTPRequestThread ping.php
+CreateHTTPRequestThread added, queue is at 1
+HTTPWorkerThread (0000575c) request queue is at 1
+DoBlockingHttpPost: (00005590) POST to ping.php?u=GameDragon&g=10670&m=Earning Achievements...
+DoBlockingHttpPost: POST to ping.php Success: 0 bytes read
+_RA_InitI Init called! ID: 13, ClientVer: 0.021
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\New folder\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00001ddc) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (0000533c) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 1976 bytes read
+DoBlockingHttpPost: (000058e8) POST to requestlogin.php?u=GameDragon&p=retroarch126...
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (0000533c) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00005700) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (00005700) success! Read 31036 bytes...

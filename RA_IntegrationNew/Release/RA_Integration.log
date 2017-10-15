@@ -1,0 +1,176 @@
+﻿  fatal: No names found, cannot describe anything.
+  RAIntegration Tag: Unstaged Changes (~14,3)
+  md5.c
+  RA_Achievement.cpp
+  RA_AchievementOverlay.cpp
+  RA_AchievementPopup.cpp
+  RA_AchievementSet.cpp
+  RA_CodeNotes.cpp
+  RA_Condition.cpp
+  RA_Core.cpp
+  RA_Defs.cpp
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementOverlay.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementSet.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_AchievementOverlay.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_AchievementSet.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementOverlay.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementSet.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementOverlay.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementSet.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementOverlay.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementSet.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Condition.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Defs.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Condition.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Core.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Defs.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Condition.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Core.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Defs.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Condition.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Core.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Defs.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Condition.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Core.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Defs.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Core.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_AchievementPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_AchievementPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_CodeNotes.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_CodeNotes.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_CodeNotes.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_CodeNotes.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_CodeNotes.cpp)
+  RA_Dlg_AchEditor.cpp
+  RA_Dlg_Achievement.cpp
+  RA_Dlg_AchievementsReporter.cpp
+  RA_Dlg_GameLibrary.cpp
+  RA_Dlg_GameTitle.cpp
+  RA_Dlg_Login.cpp
+  RA_Dlg_Memory.cpp
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_AchEditor.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Dlg_AchEditor.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_AchEditor.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_AchEditor.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_AchEditor.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Dlg_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Achievement.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_AchievementsReporter.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Dlg_AchievementsReporter.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_AchievementsReporter.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_AchievementsReporter.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_AchievementsReporter.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_GameLibrary.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Dlg_GameLibrary.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_GameLibrary.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_GameLibrary.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_GameLibrary.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_GameTitle.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Dlg_GameTitle.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_GameTitle.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_GameTitle.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_GameTitle.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Login.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Dlg_Login.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Login.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Login.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Login.cpp)
+  RA_Dlg_RomChecksum.cpp
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Memory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Dlg_Memory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Memory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Memory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_Memory.cpp)
+RA_Dlg_Memory.cpp(465): warning C4018: '>': signed/unsigned mismatch
+RA_Dlg_Memory.cpp(585): warning C4018: '<': signed/unsigned mismatch
+  RA_GameData.cpp
+  RA_httpthread.cpp
+  RA_ImageFactory.cpp
+  RA_Leaderboard.cpp
+  RA_LeaderboardPopup.cpp
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_RomChecksum.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Dlg_RomChecksum.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_RomChecksum.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_RomChecksum.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Dlg_RomChecksum.cpp)
+  RA_md5factory.cpp
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_GameData.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_GameData.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_GameData.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_GameData.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_GameData.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_httpthread.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_httpthread.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_httpthread.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_httpthread.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_httpthread.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_ImageFactory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_ImageFactory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_ImageFactory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_ImageFactory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_ImageFactory.cpp)
+  RA_MemManager.cpp
+  RA_PopupWindows.cpp
+  RA_ProgressPopup.cpp
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Leaderboard.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Leaderboard.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Leaderboard.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Leaderboard.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Leaderboard.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_LeaderboardPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_LeaderboardPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_LeaderboardPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_LeaderboardPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_LeaderboardPopup.cpp)
+  RA_RichPresence.cpp
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_md5factory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_md5factory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_md5factory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_md5factory.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_md5factory.cpp)
+  RA_User.cpp
+  RA_Interface.cpp
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_PopupWindows.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_PopupWindows.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_PopupWindows.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_PopupWindows.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_PopupWindows.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_MemManager.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_MemManager.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_MemManager.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_MemManager.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_MemManager.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_ProgressPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_ProgressPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_ProgressPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_ProgressPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_ProgressPopup.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_RichPresence.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_RichPresence.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_RichPresence.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_RichPresence.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_RichPresence.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_User.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_User.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_User.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_User.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_User.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(958): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Interface.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(964): warning C4003: not enough actual parameters for macro 'min' (compiling source file RA_Interface.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(965): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Interface.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(982): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Interface.cpp)
+m:\covers\rahandy\rasuitenew\ra_integrationnew\rapidjson/include/rapidjson/document.h(983): warning C4003: not enough actual parameters for macro 'max' (compiling source file RA_Interface.cpp)
+     Creating library M:\Covers\RAHandy\RASuiteNew\RA_IntegrationNew\RA_Integration.lib and object M:\Covers\RAHandy\RASuiteNew\RA_IntegrationNew\RA_Integration.exp
+  RA_Integration.vcxproj -> M:\Covers\RAHandy\RASuiteNew\RA_IntegrationNew\RA_Integration.dll
+  RA_Integration.vcxproj -> M:\Covers\RAHandy\RASuiteNew\RA_IntegrationNew\RA_Integration.pdb (Full PDB)

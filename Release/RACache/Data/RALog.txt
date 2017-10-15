@@ -1,0 +1,632 @@
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_KillHTTPThreads called
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_LoadPreferences - no preferences found: showing first-time message!
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_LoadPreferences - no preferences found: showing first-time message!
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_LoadPreferences - no preferences found: showing first-time message!
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_LoadPreferences - no preferences found: showing first-time message!
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_LoadPreferences - no preferences found: showing first-time message!
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_LoadPreferences - no preferences found: showing first-time message!
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+_RA_LoadPreferences - no preferences found: showing first-time message!
+DoBlockingHttpGet: (00007ca8) GET from RA_Keys.dll...
+DoBlockingHttpGet: (00007ca8) success! Read 7168 bytes...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread Badge/overlayBG.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 2
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 3
+DoBlockingHttpGet: (000079fc) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: (00008658) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (0000649c) GET from Badge/overlayBG.png...
+DoBlockingHttpGet: (000079fc) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpGet: (0000649c) success! Read 243 bytes...
+CreateHTTPRequestThread Badge/00000.png
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpGet: (0000649c) GET from Badge/00000.png...
+DoBlockingHttpGet: (0000649c) success! Read 6964 bytes...
+DoBlockingHttpPost: (00007ca8) POST to requestlogin.php?u=GameDragon&p=retroarch126...
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+DoBlockingHttpGet: (000079fc) GET from UserPic/GameDragon.png...
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (000068ac) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (000079fc) success! Read 31036 bytes...
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread Badge/overlayBG.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 2
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 3
+DoBlockingHttpPost: (0000518c) POST to requestlogin.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (0000741c) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: (00006b68) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (00000ce0) GET from Badge/overlayBG.png...
+DoBlockingHttpGet: (0000741c) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (0000741c) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00006b68) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (00000ce0) success! Read 243 bytes...
+DoBlockingHttpGet: (00006b68) success! Read 31036 bytes...
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread Badge/overlayBG.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 2
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 3
+DoBlockingHttpPost: (00008260) POST to requestlogin.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (000076fc) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: (00005708) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (000058c8) GET from Badge/overlayBG.png...
+DoBlockingHttpGet: (000076fc) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (000076fc) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00004550) GET from UserPic/GameDragon.png...
+DoBlockingHttpGet: (000058c8) success! Read 243 bytes...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (00004550) success! Read 31036 bytes...
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread Badge/overlayBG.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 2
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 3
+DoBlockingHttpPost: (000079a4) POST to requestlogin.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00008284) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: (000064b8) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (000060cc) GET from Badge/overlayBG.png...
+DoBlockingHttpGet: (00008284) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00008284) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00007720) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (000060cc) success! Read 243 bytes...
+DoBlockingHttpGet: (00007720) success! Read 31036 bytes...
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (00006fa8) POST to requestnews.php?n=6&a=1...
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (00007620) POST to requestlogin.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpGet: (00007540) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (000050d4) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00008ca4) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (00008ca4) success! Read 31036 bytes...
+_RA_InitI Init called! ID: 13, ClientVer: 0.020
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00008b64) POST to requestlogin.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00008a58) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: (000066d0) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (00008a58) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00008a58) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00008de8) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (00008de8) success! Read 31036 bytes...
+_RA_InitI Init called! ID: 13, ClientVer: 0.021
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00005128) POST to requestlogin.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00001ae0) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: (00003244) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (00001ae0) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00001ae0) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00006c30) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (00006c30) success! Read 31036 bytes...
+DoBlockingHttpPost: (00005128) POST to requestpatch.php?u=GameDragon&g=10597&f=3&l=1...
+DoBlockingHttpPost: POST to requestpatch.php Success: 21 bytes read
+CreateHTTPRequestThread requestrichpresence.php
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (00005128) POST to requestunlocks.php?u=GameDragon&t=O2wwUMHj7DmAszxC&g=10597&h=0...
+DoBlockingHttpPost: (00001ae0) POST to requestrichpresence.php?g=10597...
+DoBlockingHttpPost: POST to requestunlocks.php Success: 3 bytes read
+DoBlockingHttpPost: (00005128) POST to requestpatch.php?u=GameDragon&g=10597&f=5&l=0...
+DoBlockingHttpPost: POST to requestpatch.php Success: 156 bytes read
+CreateHTTPRequestThread Badge/48640.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread Badge/48640_lock.png
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00005128) POST to requestpatch.php?u=GameDragon&g=10597&f=9&l=0...
+DoBlockingHttpPost: POST to requestrichpresence.php Success: 0 bytes read
+HTTPWorkerThread (00001ae0) request queue is at 2
+DoBlockingHttpGet: (00004b60) GET from Badge/48640.png...
+DoBlockingHttpPost: POST to requestpatch.php Success: 21 bytes read
+CreateHTTPRequestThread requestpostactivity.php
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (00005d04) POST to requestpostactivity.php?u=GameDragon&t=O2wwUMHj7DmAszxC&a=3&m=10597...
+CreateHTTPRequestThread requestcodenotes.php
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (0000402c) POST to requestcodenotes.php?g=10597...
+DoBlockingHttpPost: POST to requestcodenotes.php Success: 97 bytes read
+DoBlockingHttpGet: (00005504) success! Read 3014 bytes...
+DoBlockingHttpGet: (00004b60) success! Read 4381 bytes...
+DoBlockingHttpPost: POST to requestpostactivity.php Success: 8 bytes read
+RA_KillHTTPThreads called
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 2
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 2
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 3
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 4
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 5
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 6
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 7
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 8
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 9
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 10
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 11
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 12
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 13
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 14
+HTTPWorkerThread (000036e8) request queue is at 10
+HTTPWorkerThread (00003308) request queue is at 13
+HTTPWorkerThread (00006c30) request queue is at 11
+HTTPWorkerThread (00002868) request queue is at 9
+HTTPWorkerThread (0000412c) request queue is at 12
+HTTPWorkerThread (00001ae0) request queue is at 7
+HTTPWorkerThread (00002934) request queue is at 8
+HTTPWorkerThread (00005574) request queue is at 3
+HTTPWorkerThread (00005504) request queue is at 2
+HTTPWorkerThread (00005d04) request queue is at 1
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+_RA_InitI Init called! ID: 13, ClientVer: 0.021
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (000057c8) POST to requestlogin.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00001f78) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: (00003420) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (00001f78) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00001f78) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (00005df4) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (00005df4) success! Read 31036 bytes...
+RA_KillHTTPThreads called
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 2
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 3
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 4
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 5
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 6
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 7
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 8
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 9
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 10
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 11
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 12
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 13
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 14
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 15
+HTTPWorkerThread (00001f78) request queue is at 14
+HTTPWorkerThread (0000598c) request queue is at 13
+HTTPWorkerThread (000032e4) request queue is at 12
+HTTPWorkerThread (00005960) request queue is at 11
+HTTPWorkerThread (00005b00) request queue is at 10
+HTTPWorkerThread (0000578c) request queue is at 9
+HTTPWorkerThread (00001f74) request queue is at 4
+HTTPWorkerThread (00001f70) request queue is at 3
+HTTPWorkerThread (00005df4) request queue is at 1
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+_RA_InitI Init called! ID: 13, ClientVer: 0.021
+(found as: RA_ATARI)
+_RA_InitI - storing "M:\Covers\RAHandy\RASuiteNew\Release\" as home dir
+_RA_LoadPreferences - loading preferences...
+RA_InitializeHTTPThreads called
+RA_InitializeHTTPThreads Adding HTTP thread 0
+RA_InitializeHTTPThreads Adding HTTP thread 1
+RA_InitializeHTTPThreads Adding HTTP thread 2
+RA_InitializeHTTPThreads Adding HTTP thread 3
+RA_InitializeHTTPThreads Adding HTTP thread 4
+RA_InitializeHTTPThreads Adding HTTP thread 5
+RA_InitializeHTTPThreads Adding HTTP thread 6
+RA_InitializeHTTPThreads Adding HTTP thread 7
+RA_InitializeHTTPThreads Adding HTTP thread 8
+RA_InitializeHTTPThreads Adding HTTP thread 9
+RA_InitializeHTTPThreads Adding HTTP thread 10
+RA_InitializeHTTPThreads Adding HTTP thread 11
+RA_InitializeHTTPThreads Adding HTTP thread 12
+RA_InitializeHTTPThreads Adding HTTP thread 13
+RA_InitializeHTTPThreads Adding HTTP thread 14
+CreateHTTPRequestThread requestnews.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread LatestRAATARIVersion.html
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00004be0) POST to requestlogin.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (0000694c) GET from LatestRAATARIVersion.html...
+DoBlockingHttpPost: (000064fc) POST to requestnews.php?n=6&a=1...
+DoBlockingHttpGet: (0000694c) success! Read 223 bytes...
+DoBlockingHttpPost: POST to requestnews.php Success: 2027 bytes read
+DoBlockingHttpPost: POST to requestlogin.php Success: 27 bytes read
+CreateHTTPRequestThread UserPic/GameDragon.png
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestfriendlist.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00000e18) POST to requestfriendlist.php?u=GameDragon&t=O2wwUMHj7DmAszxC...
+DoBlockingHttpGet: (000035b0) GET from UserPic/GameDragon.png...
+DoBlockingHttpPost: POST to requestfriendlist.php Success: 3 bytes read
+DoBlockingHttpGet: (000035b0) success! Read 31036 bytes...
+DoBlockingHttpPost: (00004be0) POST to requestpatch.php?u=GameDragon&g=10670&f=3&l=1...
+DoBlockingHttpPost: POST to requestpatch.php Success: 12 bytes read
+CreateHTTPRequestThread requestrichpresence.php
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (00004be0) POST to requestunlocks.php?u=GameDragon&t=O2wwUMHj7DmAszxC&g=10670&h=0...
+DoBlockingHttpPost: (000054a8) POST to requestrichpresence.php?g=10670...
+DoBlockingHttpPost: POST to requestunlocks.php Success: 3 bytes read
+DoBlockingHttpPost: (00004be0) POST to requestpatch.php?u=GameDragon&g=10670&f=5&l=0...
+DoBlockingHttpPost: POST to requestpatch.php Success: 12 bytes read
+DoBlockingHttpPost: (00004be0) POST to requestpatch.php?u=GameDragon&g=10670&f=9&l=0...
+DoBlockingHttpPost: POST to requestrichpresence.php Success: 0 bytes read
+DoBlockingHttpPost: POST to requestpatch.php Success: 12 bytes read
+CreateHTTPRequestThread requestpostactivity.php
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread requestcodenotes.php
+CreateHTTPRequestThread added, queue is at 2
+DoBlockingHttpPost: (00006688) POST to requestpostactivity.php?u=GameDragon&t=O2wwUMHj7DmAszxC&a=3&m=10670...
+DoBlockingHttpPost: POST to requestcodenotes.php Success: 9 bytes read
+DoBlockingHttpPost: POST to requestpostactivity.php Success: 2 bytes read
+CreateHTTPRequestThread ping.php
+CreateHTTPRequestThread added, queue is at 1
+DoBlockingHttpPost: (00000e18) POST to ping.php?u=GameDragon&g=10670&m=Earning Achievements...
+DoBlockingHttpPost: POST to ping.php Success: 0 bytes read
+CreateHTTPRequestThread ping.php
+CreateHTTPRequestThread added, queue is at 1
+HTTPWorkerThread (0000694c) request queue is at 1
+DoBlockingHttpPost: (00000e18) POST to ping.php?u=GameDragon&g=10670&m=Earning Achievements...
+DoBlockingHttpPost: POST to ping.php Success: 0 bytes read
+RA_KillHTTPThreads called
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 1
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 2
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 3
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 4
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 5
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 6
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 7
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 8
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 9
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 10
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 11
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 12
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 13
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 14
+CreateHTTPRequestThread
+CreateHTTPRequestThread added, queue is at 15
+HTTPWorkerThread (00006688) request queue is at 14
+HTTPWorkerThread (000054a8) request queue is at 13
+HTTPWorkerThread (00001da8) request queue is at 12
+HTTPWorkerThread (00004434) request queue is at 10
+HTTPWorkerThread (0000665c) request queue is at 8
+HTTPWorkerThread (000057f0) request queue is at 6
+HTTPWorkerThread (00006890) request queue is at 5
+HTTPWorkerThread (000035b0) request queue is at 4
+HTTPWorkerThread (0000694c) request queue is at 3
+HTTPWorkerThread (000064fc) request queue is at 2
+HTTPWorkerThread (00000e18) request queue is at 1
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
+RA_KillHTTPThreads ended, result 0
